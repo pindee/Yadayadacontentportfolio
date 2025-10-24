@@ -1,5 +1,5 @@
 import { Mail, Linkedin } from "lucide-react";
-import headerImage from "/assets/me.png";
+import headerImage from "/assets/me.jpg";
 
 export function Header() {
   return (
