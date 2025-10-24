@@ -101,7 +101,7 @@ export function Solutions() {
                 <div className="space-y-2">
                   {solution.deliverables.map((item, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#2d9d7f' }} />
                       <span className="text-muted-foreground text-sm">{item}</span>
                     </div>
                   ))}
@@ -117,7 +117,10 @@ export function Solutions() {
         ))}
       </div>
 
-      <Card className="bg-muted">
+      <Card className="border-2" style={{ 
+        backgroundColor: '#e8f9f5',
+        borderColor: '#7ed9c3'
+      }}>
         <CardHeader>
           <CardTitle>Working Together</CardTitle>
         </CardHeader>

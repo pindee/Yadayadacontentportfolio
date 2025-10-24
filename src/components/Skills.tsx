@@ -93,8 +93,8 @@ export function Skills() {
             <Card key={index} className="flex flex-col">
               <CardHeader>
                 <div className="flex items-start gap-3 mb-2">
-                  <div className="p-2 rounded-lg bg-primary/10">
-                    <Icon className="w-5 h-5 text-primary" />
+                  <div className="p-2 rounded-lg" style={{ backgroundColor: '#e8f9f5' }}>
+                    <Icon className="w-5 h-5" style={{ color: '#2d9d7f' }} />
                   </div>
                   <CardTitle className="flex-1">{area.title}</CardTitle>
                 </div>
@@ -115,7 +115,10 @@ export function Skills() {
         })}
       </div>
 
-      <Card className="bg-primary/5 border-primary/20">
+      <Card className="border-2" style={{ 
+        backgroundColor: '#e8f9f5',
+        borderColor: '#7ed9c3'
+      }}>
         <CardHeader>
           <CardTitle>Why This Matters</CardTitle>
         </CardHeader>

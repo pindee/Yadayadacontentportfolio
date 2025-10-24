@@ -69,7 +69,10 @@ export function ConferencePresentations() {
         ))}
       </div>
 
-      <Card>
+      <Card className="border-2" style={{ 
+        backgroundColor: '#e8f9f5',
+        borderColor: '#7ed9c3'
+      }}>
         <CardHeader>
           <CardTitle>Speaking Inquiries</CardTitle>
         </CardHeader>

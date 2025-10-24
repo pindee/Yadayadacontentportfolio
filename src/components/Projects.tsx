@@ -87,7 +87,10 @@ export function Projects() {
               <p className="text-muted-foreground mb-4">
                 {project.description}
               </p>
-              <div className="mb-4 p-3 bg-muted rounded-md">
+              <div className="mb-4 p-3 rounded-md border-l-4" style={{ 
+                backgroundColor: '#f3f4f6',
+                borderLeftColor: '#2d9d7f'
+              }}>
                 <p className="text-sm">{project.impact}</p>
               </div>
               <div className="flex flex-wrap gap-2 mt-auto">

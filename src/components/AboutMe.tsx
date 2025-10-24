@@ -8,7 +8,10 @@ export function AboutMe() {
       <div className="grid md:grid-cols-2 gap-8 items-start">
         <div className="space-y-4">
           <h2>About Me</h2>
-          <div className="p-6 bg-muted rounded-lg border-l-4 mb-6" style={{ borderLeftColor: '#7ed9c3' }}>
+          <div className="p-6 rounded-lg border-l-4 mb-6" style={{ 
+            borderLeftColor: '#7ed9c3',
+            backgroundColor: '#e8f9f5'
+          }}>
             <p className="text-muted-foreground mb-3">
               In storytelling, "yada yada" removes unnecessary words to jump straight to what matters. 
               My content strategy follows the same principle—eliminating fluff and ensuring every word serves a clear purpose.
@@ -83,12 +86,18 @@ export function AboutMe() {
       </div>
       
       <div className="grid md:grid-cols-3 gap-6 mt-12">
-        <div className="p-6 bg-muted rounded-lg">
-          <div className="mb-2">10</div>
+        <div className="p-6 rounded-lg border-2" style={{ 
+          backgroundColor: '#e8f9f5',
+          borderColor: '#7ed9c3'
+        }}>
+          <div className="mb-2" style={{ color: '#2d9d7f' }}>10</div>
           <p className="text-muted-foreground">Years of Content Experience</p>
         </div>
-        <div className="p-6 bg-muted rounded-lg">
-          <div className="mb-2">2</div>
+        <div className="p-6 rounded-lg border-2" style={{ 
+          backgroundColor: '#e8f9f5',
+          borderColor: '#7ed9c3'
+        }}>
+          <div className="mb-2" style={{ color: '#2d9d7f' }}>2</div>
           <p className="text-muted-foreground">Conference Talks</p>
         </div>
       </div>

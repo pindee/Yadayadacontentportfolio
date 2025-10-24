@@ -49,7 +49,10 @@ export default function App() {
         </Tabs>
       </main>
       
-      <footer className="border-t mt-16">
+      <footer className="border-t-2 mt-16" style={{ 
+        borderTopColor: '#7ed9c3',
+        backgroundColor: '#f9fafb'
+      }}>
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-6xl mx-auto text-center text-muted-foreground text-sm">
             <p>© 2025 Emma Pindera. Available for freelance projects and consulting.</p>
