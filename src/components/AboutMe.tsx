@@ -1,6 +1,6 @@
-import image1 from "figma:asset/e7515d68edbefbe87414775f22821a656a0f3932.png";
-import image2 from "figma:asset/b6f002254c8f55414dce70e635bdb249149f00aa.png";
-import image3 from "figma:asset/2c71e58ffb188a80bd118380b7f723b76428fe6f.png";
+import image1 from "/assets/Maeve.png";
+import image2 from "/assets/Skydiving.png";
+import image3 from "/assets/Treetop.jpg";
 
 export function AboutMe() {
   return (
