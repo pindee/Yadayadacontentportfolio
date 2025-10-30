@@ -7,8 +7,7 @@ import { Skills } from "./components/Skills";
 import { Solutions } from "./components/Solutions";
 import { ConferencePresentations } from "./components/ConferencePresentations";
 import { useEffect } from "react";
-import faviconImage from "/assets/footer-logo.png";
-import footerLogo from "/assets/footer-logo.png";
+
 
 export default function App() {
   useEffect(() => {
@@ -16,7 +15,7 @@ export default function App() {
     const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/png';
     link.rel = 'icon';
-    link.href = faviconImage;
+    link.href = "/footer-logo.png"
     document.getElementsByTagName('head')[0].appendChild(link);
   }, []);
   return (
@@ -67,11 +66,7 @@ export default function App() {
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-6xl mx-auto text-center">
             <div className="mb-4 flex justify-center">
-              <img 
-                src={footerLogo} 
-                alt="Yada Yada content" 
-                className="h-40"
-              />
+<img src="/footer-logo.png" alt="Footer logo" />
             </div>
             <p className="text-muted-foreground text-sm">© 2025 Emma Pindera. Available for freelance projects, conferences, speaking engagements, and consulting.</p>
           </div>
