@@ -73,7 +73,7 @@ export default function App() {
                 className="h-40"
               />
             </div>
-            <p className="text-muted-foreground text-sm">© 2025 Emma Pindera. Available for freelance projects and consulting.</p>
+            <p className="text-muted-foreground text-sm">© 2025 Emma Pindera. Available for freelance projects, conferences, speaking engagements, and consulting.</p>
           </div>
         </div>
       </footer>
