@@ -7,8 +7,8 @@ import { Skills } from "./components/Skills";
 import { Solutions } from "./components/Solutions";
 import { ConferencePresentations } from "./components/ConferencePresentations";
 import { useEffect } from "react";
-import faviconImage from "figma:asset/fb899e620f0393f7ff809ef26f11961b1840d216.png";
-import footerLogo from "figma:asset/859390ea10830c60fe96f1b91e17379a1ade57e8.png";
+import faviconImage from "/assets/footer-logo.png";
+import footerLogo from "/assets/footer-logo.png";
 
 export default function App() {
   useEffect(() => {
