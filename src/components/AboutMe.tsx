@@ -63,7 +63,7 @@ export function AboutMe() {
           <div className="aspect-video rounded-lg overflow-hidden">
             <ImageWithAssetFallback
               src={image1}
-              fallbackSrc={FALLBACK_URLS.aboutImage1}
+              fallbackSrc={FALLBACK_URLS.familyPhoto}
               alt="Family time"
               className="w-full h-full object-cover"
             />
@@ -71,7 +71,7 @@ export function AboutMe() {
           <div className="aspect-video rounded-lg overflow-hidden">
             <ImageWithAssetFallback
               src={image2}
-              fallbackSrc={FALLBACK_URLS.aboutImage2}
+              fallbackSrc={FALLBACK_URLS.skydivingAdventure}
               alt="Skydiving adventure"
               className="w-full h-full object-cover"
             />
@@ -79,7 +79,7 @@ export function AboutMe() {
           <div className="aspect-video rounded-lg overflow-hidden">
             <ImageWithAssetFallback
               src={image3}
-              fallbackSrc={FALLBACK_URLS.aboutImage3}
+              fallbackSrc={FALLBACK_URLS.ropesCourseAdventure}
               alt="Ropes course"
               className="w-full h-full object-cover"
             />

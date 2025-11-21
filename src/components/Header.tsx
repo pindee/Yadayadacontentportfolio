@@ -21,7 +21,7 @@ export function Header() {
                 <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 ring-2" style={{ ringColor: '#7ed9c3' }}>
                   <ImageWithAssetFallback
                     src={headerImage}
-                    fallbackSrc={FALLBACK_URLS.headerImage}
+                    fallbackSrc={FALLBACK_URLS.professionalHeadshot}
                     alt="Emma Pindera"
                     className="w-full h-full object-cover"
                   />
@@ -56,7 +56,7 @@ export function Header() {
               <div className="flex items-center justify-center">
                 <ImageWithAssetFallback
                   src={iconLogo}
-                  fallbackSrc={FALLBACK_URLS.iconLogo}
+                  fallbackSrc={FALLBACK_URLS.handWritingIconLogo}
                   alt="Yada Yada Icon"
                   className="h-12"
                 />
@@ -66,7 +66,7 @@ export function Header() {
               <div className="flex items-center justify-center">
                 <ImageWithAssetFallback
                   src={logoImage}
-                  fallbackSrc={FALLBACK_URLS.logoImage}
+                  fallbackSrc={FALLBACK_URLS.yadaYadaTextLogo}
                   alt="Yada Yada content" 
                   className="h-24"
                 />

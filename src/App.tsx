@@ -8,6 +8,8 @@ import { Solutions } from "./components/Solutions";
 import { ConferencePresentations } from "./components/ConferencePresentations";
 import { useEffect } from "react";
 import footerLogo from "figma:asset/859390ea10830c60fe96f1b91e17379a1ade57e8.png";
+import { ImageWithAssetFallback } from "./components/ImageWithAssetFallback";
+import { FALLBACK_URLS } from "./assets/fallback-config";
 
 export default function App() {
   useEffect(() => {
@@ -66,8 +68,9 @@ export default function App() {
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-6xl mx-auto text-center">
             <div className="mb-4 flex justify-center">
-              <img 
+              <ImageWithAssetFallback 
                 src={footerLogo} 
+                fallbackSrc={FALLBACK_URLS.footerBrandLogo}
                 alt="Yada Yada content" 
                 className="h-40"
               />
