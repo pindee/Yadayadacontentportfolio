@@ -1,14 +1,26 @@
+function getImageUrl(primaryPath: string, fallbackPath: string): string {
+  // Create a new promise to check if the image loads
+  return new Promise((resolve) => {
+    const img = new Image(); // Create a new Image object
+    img.src = primaryPath; // Set the source to the primary path
+    img.onload = () => resolve(primaryPath); // Resolve with primary if successful
+    img.onerror = () => resolve(fallbackPath); // Resolve with fallback if error
+  });
+}
+
 export const FALLBACK_URLS = {
   // Header images
-  professionalHeadshot: "./headshot.jpg",
-  handWritingIconLogo: "./Pen_Logo.png",
-  yadaYadaTextLogo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cimage href='./logo.png' x='0' y='0' width='200' height='60'/%3E%3C/text%3E%3C/svg%3E",
+  professionalHeadshot: getImageUrl("./headshot.jpg", "/src/assets/headshot.jpg"),
+  handWritingIconLogo: getImageUrl("./Pen_Logo.png", "/src/assets/Pen_Logo.png"),
+  yadaYadaTextLogo: getImageUrl("./logo.png", "/src/assets/logo.png"),
 
   // About Me personal images
-  familyPhoto: "./family.png",
-  skydivingAdventure: "./Skydiving.png",
-  ropesCourseAdventure: "./ropes.jpg",
+  familyPhoto: getImageUrl("./family.png", "/src/assets/family.png"),
+  skydivingAdventure: getImageUrl("./Skydiving.png", "/src/assets/Skydiving.png"),
+  ropesCourseAdventure: getImageUrl("./ropes.jpg", "/src/assets/ropes.jpg"),
 
   // Footer logo
-  footerBrandLogo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Cimage href='./footer-logo.png' x='0' y='0' width='200' height='60'/%3E%3C/text%3E%3C/svg%3E",
+  footerBrandLogo: getImageUrl("./footer-logo.png", "/src/assets/footer-logo.png"),
 };
+
+// Note: To use FALLBACK_URLS properly, you may need to handle the promises since getImageUrl returns a Promise
