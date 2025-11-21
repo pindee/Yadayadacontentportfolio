@@ -52,18 +52,7 @@ export function Solutions() {
       ],
       ideal: "Growing teams needing structure and scalability in content production"
     },
-    {
-      title: "SEO Content Strategy",
-      description: "Strategic content that ranks well and serves user intent.",
-      deliverables: [
-        "Keyword research & mapping",
-        "Content gap analysis",
-        "SEO-optimized page structure",
-        "Internal linking strategy",
-        "Performance tracking setup"
-      ],
-      ideal: "Businesses looking to increase organic visibility and traffic"
-    },
+
     {
       title: "Content Migration & Optimization",
       description: "Thoughtful content transformation during platform changes or redesigns.",
@@ -117,41 +106,7 @@ export function Solutions() {
         ))}
       </div>
 
-      <Card className="border-2" style={{ 
-        backgroundColor: '#e8f9f5',
-        borderColor: '#7ed9c3'
-      }}>
-        <CardHeader>
-          <CardTitle>Working Together</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-muted-foreground">
-            I work with clients on both project and retainer basis, adapting my approach 
-            to fit your team's needs and timeline. Typical engagements range from 4-week 
-            sprints to 6-month strategic partnerships.
-          </p>
-          <div className="grid md:grid-cols-3 gap-4">
-            <div>
-              <div className="mb-2">Discovery</div>
-              <p className="text-sm text-muted-foreground">
-                Understanding your goals, challenges, and audience
-              </p>
-            </div>
-            <div>
-              <div className="mb-2">Strategy</div>
-              <p className="text-sm text-muted-foreground">
-                Developing solutions tailored to your unique needs
-              </p>
-            </div>
-            <div>
-              <div className="mb-2">Execution</div>
-              <p className="text-sm text-muted-foreground">
-                Delivering high-quality work with clear communication
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+     
     </div>
   );
 }
