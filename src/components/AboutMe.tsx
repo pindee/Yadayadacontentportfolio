@@ -1,6 +1,8 @@
 import image1 from "figma:asset/e7515d68edbefbe87414775f22821a656a0f3932.png";
 import image2 from "figma:asset/b6f002254c8f55414dce70e635bdb249149f00aa.png";
 import image3 from "figma:asset/2c71e58ffb188a80bd118380b7f723b76428fe6f.png";
+import { ImageWithAssetFallback } from "./ImageWithAssetFallback";
+import { FALLBACK_URLS } from "../assets/fallback-config";
 
 export function AboutMe() {
   return (
@@ -59,22 +61,25 @@ export function AboutMe() {
         
         <div className="space-y-4">
           <div className="aspect-video rounded-lg overflow-hidden">
-            <img
+            <ImageWithAssetFallback
               src={image1}
+              fallbackSrc={FALLBACK_URLS.aboutImage1}
               alt="Family time"
               className="w-full h-full object-cover"
             />
           </div>
           <div className="aspect-video rounded-lg overflow-hidden">
-            <img
+            <ImageWithAssetFallback
               src={image2}
+              fallbackSrc={FALLBACK_URLS.aboutImage2}
               alt="Skydiving adventure"
               className="w-full h-full object-cover"
             />
           </div>
           <div className="aspect-video rounded-lg overflow-hidden">
-            <img
+            <ImageWithAssetFallback
               src={image3}
+              fallbackSrc={FALLBACK_URLS.aboutImage3}
               alt="Ropes course"
               className="w-full h-full object-cover"
             />
