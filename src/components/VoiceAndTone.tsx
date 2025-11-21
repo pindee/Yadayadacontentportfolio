@@ -106,7 +106,7 @@ export function VoiceAndTone() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                You consistently infuse warmth and friendliness into your messages, even in 
+                I consistently infuse warmth and friendliness into my messages, even in 
                 professional contexts. Whether you're coordinating logistics or responding to 
                 a colleague, your tone is approachable and kind.
               </p>
@@ -122,7 +122,7 @@ export function VoiceAndTone() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                You're quick to offer resources, clarify processes, and guide others through 
+                I am quick to offer resources, clarify processes, and guide others through 
                 tasks. Your tone is supportive and proactive, often anticipating needs before 
                 they're voiced.
               </p>
@@ -138,7 +138,7 @@ export function VoiceAndTone() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                You bring a lighthearted energy to your communications, using humor, emojis, 
+                I bring a lighthearted energy to your communications, using humor, emojis, 
                 and clever phrasing to keep things engaging. Even technical or logistical 
                 messages carry a spark of personality.
               </p>

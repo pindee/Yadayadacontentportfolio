@@ -10,7 +10,7 @@ export function Projects() {
       description: "Own and evolve the voice and tonal system, ensuring flexibility across contexts (e.g., onboarding vs. error states vs. AI responses) while maintaining brand coherence. Implement structured writing models across the organization, enabling consistent, machine-readable, and human-friendly content.",
       impact: "Embedded structured authoring practices across product content and internal documentation, creating clarity and reducing content debt",
       tags: ["Voice & Tone", "Structured Writing", "Brand Coherence"],
-      year: "2024"
+      year: "2021"
     },
     {
       title: "AI Agent Solutions",
@@ -18,7 +18,7 @@ export function Projects() {
       description: "Lead the integration of AI-assisted authoring into content workflows, enabling teams to scale content creation without sacrificing quality. Develop and govern prompt libraries — standardized, reusable prompt patterns that ensure AI outputs align with brand voice, product strategy, and accessibility standards.",
       impact: "Work with Engineering to ensure AI-generated or dynamic content respects structured models, tone, and governance rules",
       tags: ["AI Enablement", "Prompt Libraries", "Content Workflow"],
-      year: "2024"
+      year: "2025-2026"
     },
     {
       title: "One-Stop Resource Hub",
@@ -26,7 +26,7 @@ export function Projects() {
       description: "Created a comprehensive user-facing resource hub that centralizes all customer content resources in one accessible location. Developed and organized user training materials, in-app guidance, help files, customer support documentation, and self-service resources to empower customers with the information they need, when they need it.",
       impact: "50% reduction in support tickets, 65% improvement in customer self-service success rate, and 4.7/5 customer satisfaction rating for help resources",
       tags: ["Customer Resources", "Help Documentation", "Self-Service"],
-      year: "2023"
+      year: "2021"
     },
     {
       title: "Content Analytics Dashboard",
@@ -34,15 +34,7 @@ export function Projects() {
       description: "Built comprehensive analytics dashboard to track content success metrics including Customer Effort Scores (CES), guide and help file views, guide goal completions, video engagement rates, and content performance across all customer touchpoints. Leverage data-driven insights to continuously optimize content effectiveness and user experience.",
       impact: "Enabled data-informed content decisions, identified high-impact content gaps, and improved content ROI through continuous measurement and iteration",
       tags: ["Analytics", "CES", "Content Metrics"],
-      year: "2023"
-    },
-    {
-      title: "Product-Specific Content Architecture",
-      company: "PointClickCare",
-      description: "Developed comprehensive product-specific content architecture that adapts to different contexts and user needs. Created scalable content models for cross-product consistency while allowing flexibility for unique product requirements.",
-      impact: "95% user satisfaction score, improved content discoverability and task completion rates",
-      tags: ["Information Architecture", "Content Models", "UX"],
-      year: "2023"
+      year: "2022"
     },
     {
       title: "Style Guide",
@@ -50,7 +42,7 @@ export function Projects() {
       description: "Created comprehensive style guide that serves as the foundation for all content creation across the organization. Established writing standards, grammar rules, and best practices that align with brand voice while ensuring accessibility and clarity.",
       impact: "40% reduction in support tickets, 25% increase in content consistency across teams",
       tags: ["Style Guide", "Content Standards", "Brand Voice"],
-      year: "2022"
+      year: "2024"
     },
     {
       title: "100% Content Accessibility Compliance",
