@@ -7,13 +7,13 @@ export function ConferencePresentations() {
     {
       title: "From Pattern Library to System: Evolving a Content Design System",
       conference: "Button 2026",
-      location: "TBD",
+      location: "Online",
       date: "September 2026",
       description: "For years, I was building content pattern libraries, style guides, and documenting copy exceptions. Today, I have the opportunity to share how those patterns evolved into a content design system that helps teams create more consistent, accessible, and scalable experiences faster. I'll share our journey, what worked, what didn't, and the lessons we learned along the way.",
       topics: ["Content Design System", "Pattern Libraries", "Scale"],
       promoCode: "EMMA100",
       promoNote: "Save $100 on registration with code EMMA100",
-      registerUrl: "",
+      registerUrl: "https://www.buttonevents.com/2026-conference/2026-registration",
     },
     {
       title: "Creating Content AI Agents That Actually Work",
@@ -82,7 +82,7 @@ export function ConferencePresentations() {
                     <Calendar className="w-4 h-4" />
                     <span>{pres.date}</span>
                   </div>
-                  {pres.location && pres.location !== "TBD" && (
+                  {pres.location && (
                     <div className="flex items-center gap-2">
                       <MapPin className="w-4 h-4" />
                       <span>{pres.location}</span>
