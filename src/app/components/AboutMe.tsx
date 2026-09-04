@@ -4,7 +4,11 @@ import familyPhoto from "../../imports/family-photo-Bk_7DWal.jpg";
 import { ImageWithAssetFallback } from "./ImageWithAssetFallback";
 import { FALLBACK_URLS } from "../assets/fallback-config";
 
-export function AboutMe() {
+interface AboutMeProps {
+  onNavigate: (tab: string) => void;
+}
+
+export function AboutMe({ onNavigate }: AboutMeProps) {
   return (
     <div className="space-y-8">
       <div className="grid md:grid-cols-2 gap-8 items-start">
@@ -25,7 +29,7 @@ export function AboutMe() {
             </p>
           </div>
           <p className="text-muted-foreground">
-            I'm a content strategist with over 10 years of experience in educational content and technology.
+            I'm a senior content strategist with over 10 years of experience in educational content and technology.
             I have over 5 years in content strategy helping companies find their voice and tone and creating and identifying tools for writers to stick to the voice and tone. My approach combines strategic thinking 
             with creative problem-solving to create content that users understand and appreciate.
           </p>
@@ -91,20 +95,22 @@ export function AboutMe() {
       </div>
       
       <div className="grid md:grid-cols-3 gap-6 mt-12">
-        <div className="p-6 rounded-lg border-2" style={{ 
-          backgroundColor: '#e8f9f5',
-          borderColor: '#7ed9c3'
-        }}>
+        <button
+          onClick={() => onNavigate("projects")}
+          className="p-6 rounded-lg border-2 text-left transition-shadow hover:shadow-md cursor-pointer"
+          style={{ backgroundColor: '#e8f9f5', borderColor: '#7ed9c3' }}
+        >
           <div className="mb-2" style={{ color: '#2d9d7f' }}>10</div>
           <p className="text-muted-foreground">Years of Content Experience</p>
-        </div>
-        <div className="p-6 rounded-lg border-2" style={{ 
-          backgroundColor: '#e8f9f5',
-          borderColor: '#7ed9c3'
-        }}>
-          <div className="mb-2" style={{ color: '#2d9d7f' }}>2</div>
+        </button>
+        <button
+          onClick={() => onNavigate("presentations")}
+          className="p-6 rounded-lg border-2 text-left transition-shadow hover:shadow-md cursor-pointer"
+          style={{ backgroundColor: '#e8f9f5', borderColor: '#7ed9c3' }}
+        >
+          <div className="mb-2" style={{ color: '#2d9d7f' }}>4</div>
           <p className="text-muted-foreground">Conference Talks</p>
-        </div>
+        </button>
       </div>
 
       

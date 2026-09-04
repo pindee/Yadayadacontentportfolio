@@ -5,36 +5,12 @@ import { ExternalLink } from "lucide-react";
 export function Projects() {
   const projects = [
     {
-      title: "Voice and Tone",
-      company: "PointClickCare",
-      description: "Own and evolve the voice and tonal system, ensuring flexibility across contexts (e.g., onboarding vs. error states vs. AI responses) while maintaining brand coherence. Implement structured writing models across the organization, enabling consistent, machine-readable, and human-friendly content.",
-      impact: "Embedded structured authoring practices across product content and internal documentation, creating clarity and reducing content debt",
-      tags: ["Voice & Tone", "Structured Writing", "Brand Coherence"],
-      year: "2021"
-    },
-    {
       title: "AI Agent Solutions",
       company: "PointClickCare",
       description: "Lead the integration of AI-assisted authoring into content workflows, enabling teams to scale content creation without sacrificing quality. Develop and govern prompt libraries — standardized, reusable prompt patterns that ensure AI outputs align with brand voice, product strategy, and accessibility standards.",
       impact: "Work with Engineering to ensure AI-generated or dynamic content respects structured models, tone, and governance rules",
       tags: ["AI Enablement", "Prompt Libraries", "Content Workflow"],
       year: "2025-2026"
-    },
-    {
-      title: "One-Stop Resource Hub",
-      company: "PointClickCare",
-      description: "Created a comprehensive user-facing resource hub that centralizes all customer content resources in one accessible location. Developed and organized user training materials, in-app guidance, help files, customer support documentation, and self-service resources to empower customers with the information they need, when they need it.",
-      impact: "50% reduction in support tickets, 65% improvement in customer self-service success rate, and 4.7/5 customer satisfaction rating for help resources",
-      tags: ["Customer Resources", "Help Documentation", "Self-Service"],
-      year: "2021"
-    },
-    {
-      title: "Content Analytics Dashboard",
-      company: "PointClickCare",
-      description: "Built comprehensive analytics dashboard to track content success metrics including Customer Effort Scores (CES), guide and help file views, guide goal completions, video engagement rates, and content performance across all customer touchpoints. Leverage data-driven insights to continuously optimize content effectiveness and user experience.",
-      impact: "Enabled data-informed content decisions, identified high-impact content gaps, and improved content ROI through continuous measurement and iteration",
-      tags: ["Analytics", "CES", "Content Metrics"],
-      year: "2022"
     },
     {
       title: "Style Guide",
@@ -45,13 +21,61 @@ export function Projects() {
       year: "2024"
     },
     {
+      title: "Content Analytics Dashboard",
+      company: "PointClickCare",
+      description: "Built comprehensive analytics dashboard to track content success metrics including Customer Effort Scores (CES), guide and help file views, guide goal completions, video engagement rates, and content performance across all customer touchpoints. Leverage data-driven insights to continuously optimize content effectiveness and user experience.",
+      impact: "Enabled data-informed content decisions, identified high-impact content gaps, and improved content ROI through continuous measurement and iteration",
+      tags: ["Analytics", "CES", "Content Metrics"],
+      year: "2022"
+    },
+    {
       title: "100% Content Accessibility Compliance",
       company: "PointClickCare",
       description: "Led organization-wide initiative to achieve 100% content accessibility compliance. Added comprehensive alt-text to all images, ensured color contrast accessibility, and implemented WCAG 2.1 AA standards across all product content and documentation.",
       impact: "WCAG 2.1 AA compliance achieved, improved user experience for all users including those with disabilities",
       tags: ["Accessibility", "WCAG Compliance", "Inclusive Design"],
       year: "2022"
-    }
+    },
+    {
+      title: "Voice and Tone",
+      company: "PointClickCare",
+      description: "Own and evolve the voice and tonal system, ensuring flexibility across contexts (e.g., onboarding vs. error states vs. AI responses) while maintaining brand coherence. Implement structured writing models across the organization, enabling consistent, machine-readable, and human-friendly content.",
+      impact: "Embedded structured authoring practices across product content and internal documentation, creating clarity and reducing content debt",
+      tags: ["Voice & Tone", "Structured Writing", "Brand Coherence"],
+      year: "2021"
+    },
+    {
+      title: "One-Stop Resource Hub",
+      company: "PointClickCare",
+      description: "Created a comprehensive user-facing resource hub that centralizes all customer content resources in one accessible location. Developed and organized user training materials, in-app guidance, help files, customer support documentation, and self-service resources to empower customers with the information they need, when they need it.",
+      impact: "50% reduction in support tickets, 65% improvement in customer self-service success rate, and 4.7/5 customer satisfaction rating for help resources",
+      tags: ["Customer Resources", "Help Documentation", "Self-Service"],
+      year: "2021"
+    },
+    {
+      title: "End to End Release Cycle Calendar, Schedule, Process & Deliverables",
+      company: "PointClickCare",
+      description: "Created, managed, and maintained a comprehensive end-to-end release cycle framework encompassing the full content calendar, scheduling, process documentation, and deliverables tracking. Established a repeatable system that aligned content teams with product release timelines across every stage of the cycle.",
+      impact: "Brought structure and predictability to content releases, ensuring all deliverables were scoped, assigned, and shipped on time with every product cycle",
+      tags: ["Release Management", "Content Operations", "Process Design"],
+      year: "2021"
+    },
+    {
+      title: "Interactive Customer-Facing eLearning & Support Documentation",
+      company: "Skywise (formerly Navblue)",
+      description: "Designed and developed interactive customer-facing eLearning courses paired with comprehensive supporting documentation. Built engaging, scenario-based learning experiences that guided customers through complex workflows, complemented by reference documentation that reinforced learning and enabled self-service support.",
+      impact: "Equipped customers with the knowledge and confidence to onboard and operate independently, reducing reliance on live support and improving overall product adoption",
+      tags: ["eLearning", "Instructional Design", "Support Documentation"],
+      year: "2020"
+    },
+    {
+      title: "Help File Architecture and Creation in CCMS",
+      company: "PointClickCare",
+      description: "Architected and authored a comprehensive help file system within a Component Content Management System (CCMS), structuring modular, reusable content components that could be assembled and published across multiple outputs and audiences.",
+      impact: "Established a scalable content architecture that reduced authoring redundancy and improved consistency across all help documentation",
+      tags: ["CCMS", "Help Documentation", "Content Architecture"],
+      year: "2015"
+    },
   ];
 
   return (

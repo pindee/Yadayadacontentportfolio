@@ -6,12 +6,14 @@ import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
 import { Solutions } from "./components/Solutions";
 import { ConferencePresentations } from "./components/ConferencePresentations";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import footerLogo from "figma:asset/859390ea10830c60fe96f1b91e17379a1ade57e8.png";
 import { ImageWithAssetFallback } from "./components/ImageWithAssetFallback";
 import { FALLBACK_URLS } from "./assets/fallback-config";
 
 export default function App() {
+  const [activeTab, setActiveTab] = useState("about");
+
   useEffect(() => {
     // Set favicon
     const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
@@ -25,7 +27,7 @@ export default function App() {
       <Header />
       
       <main className="container mx-auto px-4 py-8 md:py-12">
-        <Tabs defaultValue="about" className="max-w-6xl mx-auto">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="max-w-6xl mx-auto">
           <TabsList className="grid w-full grid-cols-3 lg:grid-cols-6 mb-8">
             <TabsTrigger value="about">About Me</TabsTrigger>
             <TabsTrigger value="voice">Voice & Tone</TabsTrigger>
@@ -36,7 +38,7 @@ export default function App() {
           </TabsList>
           
           <TabsContent value="about" className="mt-0">
-            <AboutMe />
+            <AboutMe onNavigate={setActiveTab} />
           </TabsContent>
           
           <TabsContent value="voice" className="mt-0">
@@ -75,7 +77,7 @@ export default function App() {
                 className="h-40"
               />
             </div>
-            <p className="text-muted-foreground text-sm">© 2025 Emma Pindera. Available for freelance projects, conferences, speaking engagements, and consulting.</p>
+            <p className="text-muted-foreground text-sm">© 2026 Emma Pindera. Available for freelance projects, conferences, speaking engagements, and consulting.</p>
           </div>
         </div>
       </footer>

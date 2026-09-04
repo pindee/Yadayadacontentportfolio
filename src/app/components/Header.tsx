@@ -29,7 +29,7 @@ export function Header() {
                 <div className="text-center md:text-left">
                   <h2 className="mb-1">Emma Pindera, MET</h2>
                   <p className="text-muted-foreground mb-3">
-                    Content Strategist
+                    Senior Content Strategist
                   </p>
                   <div className="flex gap-4 justify-center md:justify-start">
                     <a
