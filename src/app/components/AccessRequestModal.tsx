@@ -61,7 +61,7 @@ export function AccessRequestModal({ open, onOpenChange, itemTitle, requestLabel
           <div className="mb-4 p-3 rounded-md text-sm" style={{ backgroundColor: "#e8f9f5", color: "#2d9d7f" }}>
             <span className="font-medium">Requesting:</span>
             <p className="mt-1 text-muted-foreground text-xs leading-snug">
-              {isAll ? itemTitle : `${requestLabel} — ${itemTitle}`}
+              {isAll ? itemTitle : `${requestLabel.replace(/\b\w/g, c => c.toUpperCase())}: ${itemTitle}`}
             </p>
           </div>
 
