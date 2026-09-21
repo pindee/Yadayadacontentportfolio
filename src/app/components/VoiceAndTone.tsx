@@ -106,9 +106,7 @@ export function VoiceAndTone() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                I consistently infuse warmth and friendliness into my messages, even in 
-                professional contexts. Whether you're coordinating logistics or responding to 
-                a colleague, your tone is approachable and kind.
+                I consistently infuse warmth and friendliness into my messages, even in professional contexts. Whether I'm coordinating logistics or responding to a colleague, my tone is approachable and kind.
               </p>
             </CardContent>
           </Card>
@@ -122,9 +120,7 @@ export function VoiceAndTone() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                I am quick to offer resources, clarify processes, and guide others through 
-                tasks. Your tone is supportive and proactive, often anticipating needs before 
-                they're voiced.
+                I am quick to offer resources, clarify processes, and guide others through tasks. My tone is supportive and proactive, often anticipating needs before they're voiced.
               </p>
             </CardContent>
           </Card>
@@ -134,13 +130,11 @@ export function VoiceAndTone() {
               <div className="w-12 h-12 rounded-full flex items-center justify-center mb-3" style={{ backgroundColor: '#5bc4ab' }}>
                 <Sparkles className="w-6 h-6" style={{ color: '#ffffff' }} />
               </div>
-              <CardTitle>Playful & Creative</CardTitle>
+              <CardTitle>Positive & Bubbly</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                I bring a lighthearted energy to your communications, using humor, emojis, 
-                and clever phrasing to keep things engaging. Even technical or logistical 
-                messages carry a spark of personality.
+                I bring a lighthearted energy to my communications, using humor and clever phrasing to keep things engaging. Even technical or logistical messages carry a spark of personality.
               </p>
             </CardContent>
           </Card>

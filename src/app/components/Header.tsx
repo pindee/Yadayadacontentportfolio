@@ -75,7 +75,7 @@ export function Header() {
             
             {/* Bottom row: Tagline */}
             <p className="text-muted-foreground text-center">
-              "Yada yada" skips the fluff to get to what matters—my content does the same, ensuring every word serves a clear purpose.
+              "Yada yada" skips the fluff to get to what matters. My content does the same, ensuring every word serves a clear purpose.
             </p>
           </div>
         </div>

@@ -17,7 +17,7 @@ export function Skills() {
       capabilities: [
         "I ensure voice, tone, and terminology remain consistent across squads and markets",
         "I embed content strategy into product and engineering roadmaps",
-        "I influence decisions early — not just editing late"
+        "I influence decisions early ; not just editing late"
       ]
     },
     {
@@ -45,7 +45,7 @@ export function Skills() {
       title: "AI Enablement & Prompt Libraries",
       description: "I lead the integration of AI-assisted authoring into content workflows, enabling teams to scale content creation without sacrificing quality.",
       capabilities: [
-        "I develop and govern prompt libraries — standardized, reusable prompt patterns",
+        "I develop and govern prompt libraries : standardized, reusable prompt patterns",
         "I ensure AI outputs align with brand voice, product strategy, and accessibility standards",
         "I act as strategic owner of language in AI contexts (assistants, copilots, chat interfaces)"
       ]
@@ -63,7 +63,7 @@ export function Skills() {
     {
       icon: BarChart3,
       title: "Measurement & Continuous Improvement",
-      description: "I define content success metrics tied to product and organizational goals — e.g., task completion, error reduction, conversion, comprehension, and support deflection.",
+      description: "I define content success metrics tied to product and organizational goals such as task completion, error reduction, conversion, comprehension, and support deflection.",
       capabilities: [
         "I use quantitative analytics and qualitative research to evolve content patterns",
         "I conduct audits and feedback loops to keep systems clean and scalable",
@@ -81,7 +81,7 @@ export function Skills() {
             In a modern Product–Engineering–UX organization, Content Designers focus on crafting language within features: writing UI copy, help content, onboarding flows, and micro-interactions that make individual user journeys clear and usable.
           </p>
           <p className="text-muted-foreground">
-            I work systemically and programmatically — ensuring that all those individual pieces work together as a cohesive, scalable, and intelligent content ecosystem. I shape frameworks, govern patterns, and operationalize language across the entire product lifecycle and organization.
+            I work systemically and programmatically ,ensuring that all those individual pieces work together as a cohesive, scalable, and intelligent content ecosystem. I shape frameworks, govern patterns, and operationalize language across the entire product lifecycle and organization.
           </p>
         </div>
       </div>
@@ -139,7 +139,7 @@ export function Skills() {
               </li>
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Teams across the org are empowered to write well — not just content specialists</span>
+                <span className="text-muted-foreground">Teams across the org are empowered to write well ; not just content specialists</span>
               </li>
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />

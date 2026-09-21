@@ -34,7 +34,7 @@ export default function App() {
             <TabsTrigger value="projects">My Projects</TabsTrigger>
             <TabsTrigger value="skills">My Skills</TabsTrigger>
             <TabsTrigger value="solutions">My Solutions</TabsTrigger>
-            <TabsTrigger value="presentations">Presentations</TabsTrigger>
+            <TabsTrigger value="presentations">My Conferences</TabsTrigger>
           </TabsList>
           
           <TabsContent value="about" className="mt-0">

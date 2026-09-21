@@ -20,11 +20,11 @@ export function AboutMe({ onNavigate }: AboutMeProps) {
           }}>
             <p className="text-muted-foreground mb-3">
               In storytelling, "yada yada" removes unnecessary words to jump straight to what matters. 
-              My content strategy follows the same principle—eliminating fluff and ensuring every word serves a clear purpose.
+              My content strategy follows the same principle: eliminating fluff and ensuring every word serves a clear purpose.
             </p>
             <p className="text-muted-foreground">
               Users don't read walls of text. They scan, they skim, and they leave when content gets complicated. 
-              That's why I focus on creating content that's <strong>clear</strong>, <strong>simple</strong>, and <strong>actionable</strong>—
+              That's why I focus on creating content that's <strong>clear</strong>, <strong>simple</strong>, and <strong>actionable</strong>:
               cutting through the noise to deliver exactly what users need, nothing more.
             </p>
           </div>
@@ -45,7 +45,7 @@ export function AboutMe({ onNavigate }: AboutMeProps) {
         <h3 className="mb-4">Life Beyond Content</h3>
         <p className="text-muted-foreground mb-4">
           I believe that the best content strategists bring diverse experiences to their work. 
-          My adventurous spirit and love for new challenges directly influence how I approach content problems—
+          My adventurous spirit and love for new challenges directly influence how I approach content problems,
           with courage, creativity, and a willingness to take calculated risks.
         </p>
         <p className="text-muted-foreground mb-4">
