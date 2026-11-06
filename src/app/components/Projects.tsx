@@ -261,10 +261,9 @@ export function Projects() {
                   aria-hidden="true"
                 />
                 <div>
-                  <p className="text-sm font-semibold text-foreground">
-                    {item.period} <span className="font-normal text-muted-foreground">· {item.duration}</span>
-                  </p>
-                  <p className="mt-1 flex items-start gap-1.5 text-xs leading-5 text-muted-foreground">
+                  <p className="text-sm font-semibold text-foreground">{item.period}</p>
+                  <p className="mt-1 text-xs font-medium text-muted-foreground">{item.duration}</p>
+                  <p className="mt-2 flex items-start gap-1.5 text-xs leading-5 text-muted-foreground">
                     <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                     {item.location}
                   </p>
