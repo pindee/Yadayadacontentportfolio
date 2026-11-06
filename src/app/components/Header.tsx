@@ -7,9 +7,9 @@ import { FALLBACK_URLS } from "../assets/fallback-config";
 
 export function Header() {
   return (
-    <header className="border-b-4 shadow-md" style={{ 
-      borderBottomColor: '#7ed9c3',
-      background: 'linear-gradient(135deg, #e8f9f5 0%, #d1f2ea 100%)'
+    <header className="border-b-4 shadow-sm" style={{ 
+      borderBottomColor: '#34465C',
+      background: 'linear-gradient(135deg, #F7F3EA 0%, #E4E8DE 100%)'
     }}>
       <div className="container mx-auto px-4 py-6">
         <div className="max-w-6xl mx-auto">
@@ -18,7 +18,7 @@ export function Header() {
             <div className="flex flex-col md:flex-row gap-8 items-center justify-between">
               {/* Left: Headshot and name/links */}
               <div className="flex items-center gap-6">
-                <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 ring-2" style={{ ringColor: '#7ed9c3' }}>
+                <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-offset-4 ring-offset-[#F7F3EA]" style={{ ringColor: '#438184' }}>
                   <ImageWithAssetFallback
                     src={headerImage}
                     fallbackSrc={FALLBACK_URLS.professionalHeadshot}

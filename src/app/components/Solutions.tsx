@@ -52,7 +52,18 @@ export function Solutions() {
       ],
       ideal: "Growing teams needing structure and scalability in content production"
     },
-
+    {
+      title: "AI-Ready Content Systems",
+      description: "Trusted content foundations that help people and machines create, find, interpret, and reuse information accurately.",
+      deliverables: [
+        "Machine-readable style guides",
+        "Content design systems and reusable patterns",
+        "Governed AI agent workflows",
+        "Structured templates, variables, and metadata",
+        "Authoring and design tool integrations"
+      ],
+      ideal: "Organizations preparing their content, standards, and workflows for AI without sacrificing quality or trust"
+    },
     {
       title: "Content Migration & Optimization",
       description: "Thoughtful content transformation during platform changes or redesigns.",
@@ -90,7 +101,7 @@ export function Solutions() {
                 <div className="space-y-2">
                   {solution.deliverables.map((item, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#2d9d7f' }} />
+                      <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#438184' }} />
                       <span className="text-muted-foreground text-sm">{item}</span>
                     </div>
                   ))}

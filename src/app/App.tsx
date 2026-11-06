@@ -31,7 +31,7 @@ export default function App() {
           <TabsList className="grid w-full grid-cols-3 lg:grid-cols-6 mb-8">
             <TabsTrigger value="about">About Me</TabsTrigger>
             <TabsTrigger value="voice">Voice & Tone</TabsTrigger>
-            <TabsTrigger value="projects">My Projects</TabsTrigger>
+            <TabsTrigger value="projects">My Work</TabsTrigger>
             <TabsTrigger value="skills">My Skills</TabsTrigger>
             <TabsTrigger value="solutions">My Solutions</TabsTrigger>
             <TabsTrigger value="presentations">My Talks</TabsTrigger>
@@ -64,8 +64,8 @@ export default function App() {
       </main>
       
       <footer className="border-t-2 mt-16" style={{ 
-        borderTopColor: '#7ed9c3',
-        backgroundColor: '#f9fafb'
+        borderTopColor: '#438184',
+        backgroundColor: '#F7F3EA'
       }}>
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-6xl mx-auto text-center">

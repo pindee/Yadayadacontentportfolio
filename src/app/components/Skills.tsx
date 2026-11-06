@@ -5,7 +5,8 @@ import {
   Volume2,
   Bot,
   GraduationCap,
-  BarChart3
+  BarChart3,
+  Braces
 } from "lucide-react";
 
 export function Skills() {
@@ -28,6 +29,17 @@ export function Skills() {
         "I partner with Design System teams to evolve language and interaction patterns in sync",
         "I enable squads to move quickly while staying aligned",
         "I maintain governance models and documentation for correct system usage"
+      ]
+    },
+    {
+      icon: Braces,
+      title: "Content Engineering",
+      description: "I turn content standards into structured, rule-based, and machine-readable systems that work for both people and AI.",
+      capabilities: [
+        "I translate design-system guidance into reusable rules, templates, variables, and guardrails",
+        "I build AI skills that make content review and quality checks available on demand",
+        "I bring content standards into design tools and source-code workflows so issues are caught before release",
+        "I write and update custom CSS for personalized guides and resource hub experiences"
       ]
     },
     {
@@ -93,8 +105,8 @@ export function Skills() {
             <Card key={index} className="flex flex-col">
               <CardHeader>
                 <div className="flex items-start gap-3 mb-2">
-                  <div className="p-2 rounded-lg" style={{ backgroundColor: '#e8f9f5' }}>
-                    <Icon className="w-5 h-5" style={{ color: '#2d9d7f' }} />
+                  <div className="p-2 rounded-lg" style={{ backgroundColor: '#EEF0E9' }}>
+                    <Icon className="w-5 h-5" style={{ color: '#438184' }} />
                   </div>
                   <CardTitle className="flex-1">{area.title}</CardTitle>
                 </div>
@@ -116,8 +128,8 @@ export function Skills() {
       </div>
 
       <Card className="border-2" style={{ 
-        backgroundColor: '#e8f9f5',
-        borderColor: '#7ed9c3'
+        backgroundColor: '#EEF0E9',
+        borderColor: '#91A18D'
       }}>
         <CardHeader>
           <CardTitle>Why This Matters</CardTitle>

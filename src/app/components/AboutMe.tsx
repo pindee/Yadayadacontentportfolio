@@ -1,6 +1,6 @@
 import image2 from "figma:asset/b6f002254c8f55414dce70e635bdb249149f00aa.png";
 import image3 from "figma:asset/2c71e58ffb188a80bd118380b7f723b76428fe6f.png";
-import familyPhoto from "../../imports/family-photo-Bk_7DWal.jpg";
+import familyPhoto from "../../imports/image-4.png";
 import { ImageWithAssetFallback } from "./ImageWithAssetFallback";
 import { FALLBACK_URLS } from "../assets/fallback-config";
 
@@ -9,14 +9,19 @@ interface AboutMeProps {
 }
 
 export function AboutMe({ onNavigate }: AboutMeProps) {
+  const navigateToTab = (tab: string) => {
+    onNavigate(tab);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="space-y-8">
       <div className="grid md:grid-cols-2 gap-8 items-start">
         <div className="space-y-4">
           <h2>About Me</h2>
           <div className="p-6 rounded-lg border-l-4 mb-6" style={{ 
-            borderLeftColor: '#7ed9c3',
-            backgroundColor: '#e8f9f5'
+            borderLeftColor: '#438184',
+            backgroundColor: '#E1ECEB'
           }}>
             <p className="text-muted-foreground mb-3">
               In storytelling, "yada yada" removes unnecessary words to jump straight to what matters. 
@@ -32,6 +37,18 @@ export function AboutMe({ onNavigate }: AboutMeProps) {
             I'm a senior content strategist with over 10 years of experience in educational content and technology.
             I have over 5 years in content strategy helping companies find their voice and tone and creating and identifying tools for writers to stick to the voice and tone. My approach combines strategic thinking 
             with creative problem-solving to create content that users understand and appreciate.
+          </p>
+          <p className="text-muted-foreground">
+            Creating content has changed. Content is no longer written only for the person reading a screen.
+            It also needs to work across search, AI tools, support experiences, and connected systems.
+            That means it must be structured, consistent, well governed, and grounded in reliable sources.
+          </p>
+          <p className="text-muted-foreground">
+            I create trusted content that works for both people and machines. For users, it is clear,
+            accessible, and useful. For machines, it has the structure and context needed to be found,
+            interpreted, and reused accurately. By combining human-centered writing with content models,
+            metadata, governance, and responsible AI practices, I help teams build content ecosystems
+            that people can trust and technology can understand.
           </p>
           <p className="text-muted-foreground">
             I believe that great content starts with understanding your users. Whether 
@@ -96,20 +113,28 @@ export function AboutMe({ onNavigate }: AboutMeProps) {
       
       <div className="grid md:grid-cols-3 gap-6 mt-12">
         <button
-          onClick={() => onNavigate("projects")}
+          onClick={() => navigateToTab("projects")}
           className="p-6 rounded-lg border-2 text-left transition-shadow hover:shadow-md cursor-pointer"
-          style={{ backgroundColor: '#e8f9f5', borderColor: '#7ed9c3' }}
+          style={{ backgroundColor: '#EEF0E9', borderColor: '#91A18D' }}
         >
-          <div className="mb-2" style={{ color: '#2d9d7f' }}>10</div>
+          <div className="mb-2" style={{ color: '#34465C' }}>12</div>
           <p className="text-muted-foreground">Years of Content Experience</p>
         </button>
         <button
-          onClick={() => onNavigate("presentations")}
+          onClick={() => navigateToTab("presentations")}
           className="p-6 rounded-lg border-2 text-left transition-shadow hover:shadow-md cursor-pointer"
-          style={{ backgroundColor: '#e8f9f5', borderColor: '#7ed9c3' }}
+          style={{ backgroundColor: '#EEF0E9', borderColor: '#91A18D' }}
         >
-          <div className="mb-2" style={{ color: '#2d9d7f' }}>4</div>
+          <div className="mb-2" style={{ color: '#34465C' }}>4</div>
           <p className="text-muted-foreground">Conference Talks</p>
+        </button>
+        <button
+          onClick={() => navigateToTab("presentations")}
+          className="p-6 rounded-lg border-2 text-left transition-shadow hover:shadow-md cursor-pointer"
+          style={{ backgroundColor: '#EEF0E9', borderColor: '#91A18D' }}
+        >
+          <div className="mb-2" style={{ color: '#34465C' }}>2</div>
+          <p className="text-muted-foreground">Podcast Talks</p>
         </button>
       </div>
 

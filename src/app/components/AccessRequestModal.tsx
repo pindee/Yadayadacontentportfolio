@@ -58,7 +58,7 @@ export function AccessRequestModal({ open, onOpenChange, itemTitle, requestLabel
             </Dialog.Close>
           </div>
 
-          <div className="mb-4 p-3 rounded-md text-sm" style={{ backgroundColor: "#e8f9f5", color: "#2d9d7f" }}>
+          <div className="mb-4 p-3 rounded-md text-sm" style={{ backgroundColor: "#EEF0E9", color: "#34465C" }}>
             <span className="font-medium">Requesting:</span>
             <p className="mt-1 text-muted-foreground text-xs leading-snug">
               {isAll ? itemTitle : `${requestLabel.replace(/\b\w/g, c => c.toUpperCase())}: ${itemTitle}`}
@@ -76,7 +76,7 @@ export function AccessRequestModal({ open, onOpenChange, itemTitle, requestLabel
                 onChange={e => setName(e.target.value)}
                 placeholder="Jane Smith"
                 className="w-full px-3 py-2 rounded-md border border-border bg-background text-sm focus:outline-none focus:ring-2"
-                style={{ "--tw-ring-color": "#7ed9c3" } as React.CSSProperties}
+                style={{ "--tw-ring-color": "#91A18D" } as React.CSSProperties}
               />
             </div>
             <div>
@@ -89,7 +89,7 @@ export function AccessRequestModal({ open, onOpenChange, itemTitle, requestLabel
                 onChange={e => setEmail(e.target.value)}
                 placeholder="jane@example.com"
                 className="w-full px-3 py-2 rounded-md border border-border bg-background text-sm focus:outline-none focus:ring-2"
-                style={{ "--tw-ring-color": "#7ed9c3" } as React.CSSProperties}
+                style={{ "--tw-ring-color": "#91A18D" } as React.CSSProperties}
               />
             </div>
             <div>
@@ -101,13 +101,13 @@ export function AccessRequestModal({ open, onOpenChange, itemTitle, requestLabel
                 placeholder="For example, I attended the session and would love to revisit the material..."
                 rows={3}
                 className="w-full px-3 py-2 rounded-md border border-border bg-background text-sm focus:outline-none focus:ring-2 resize-none"
-                style={{ "--tw-ring-color": "#7ed9c3" } as React.CSSProperties}
+                style={{ "--tw-ring-color": "#91A18D" } as React.CSSProperties}
               />
             </div>
             <button
               type="submit"
               className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md text-sm font-medium text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#2d9d7f" }}
+              style={{ backgroundColor: "#34465C" }}
             >
               <Send className="w-4 h-4" />
               Send request

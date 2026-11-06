@@ -8,10 +8,16 @@ export const FALLBACK_URLS = {
   yadaYadaTextLogo: "/images/yada-yada-logo.png",
 
   // About Me personal images
-  familyPhoto: "/images/family-photo.jpg",
+  familyPhoto: "/images/about-family-lake.png",
   skydivingAdventure: "/images/skydiving.jpg",
   ropesCourseAdventure: "/images/ropes-course.jpg",
 
   // Footer logo
   footerBrandLogo: "/images/footer-logo.png",
+
+  // Talk graphics
+  button2026Talk: "/images/button-2026-talk.png",
+  lavaCon2026Talk: "/images/lavacon-2026-talk.png",
+  contentMattersPodcast: "/images/content-matters-podcast.png",
+  lavaCon2024Talk: "/images/lavacon-2024-talk.png",
 };
