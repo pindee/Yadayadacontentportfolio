@@ -4,8 +4,7 @@ import { AboutMe } from "./components/AboutMe";
 import { VoiceAndTone } from "./components/VoiceAndTone";
 import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
-import { Solutions } from "./components/Solutions";
-import { ConferencePresentations } from "./components/ConferencePresentations";
+import { Talks } from "./components/Talks";
 import { useEffect, useState } from "react";
 import footerLogo from "figma:asset/859390ea10830c60fe96f1b91e17379a1ade57e8.png";
 import { ImageWithAssetFallback } from "./components/ImageWithAssetFallback";
@@ -24,21 +23,20 @@ export default function App() {
   }, []);
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <Header onNavigate={setActiveTab} />
       
-      <main className="container mx-auto px-4 py-8 md:py-12">
+      <main id="portfolio-content" className="container mx-auto px-4 py-12 md:py-20">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="max-w-6xl mx-auto">
-          <TabsList className="grid w-full grid-cols-3 lg:grid-cols-6 mb-8">
+          <TabsList className="mb-8 grid h-auto w-full grid-cols-2 gap-1 sm:grid-cols-5">
             <TabsTrigger value="about">About Me</TabsTrigger>
             <TabsTrigger value="voice">Voice & Tone</TabsTrigger>
             <TabsTrigger value="projects">My Work</TabsTrigger>
-            <TabsTrigger value="skills">My Skills</TabsTrigger>
-            <TabsTrigger value="solutions">My Solutions</TabsTrigger>
+            <TabsTrigger value="skills">What I Do</TabsTrigger>
             <TabsTrigger value="presentations">My Talks</TabsTrigger>
           </TabsList>
           
           <TabsContent value="about" className="mt-0">
-            <AboutMe onNavigate={setActiveTab} />
+            <AboutMe />
           </TabsContent>
           
           <TabsContent value="voice" className="mt-0">
@@ -53,20 +51,13 @@ export default function App() {
             <Skills />
           </TabsContent>
           
-          <TabsContent value="solutions" className="mt-0">
-            <Solutions />
-          </TabsContent>
-          
           <TabsContent value="presentations" className="mt-0">
-            <ConferencePresentations />
+            <Talks />
           </TabsContent>
         </Tabs>
       </main>
       
-      <footer className="border-t-2 mt-16" style={{ 
-        borderTopColor: '#438184',
-        backgroundColor: '#F7F3EA'
-      }}>
+      <footer className="mt-20 border-t border-border bg-muted">
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-6xl mx-auto text-center">
             <div className="mb-4 flex justify-center">
@@ -74,7 +65,7 @@ export default function App() {
                 src={footerLogo} 
                 fallbackSrc={FALLBACK_URLS.footerBrandLogo}
                 alt="Yada Yada content" 
-                className="h-40"
+                className="h-24"
               />
             </div>
             <p className="text-muted-foreground text-sm">© 2026 Emma Pindera. Available for freelance projects, conferences, speaking engagements, and consulting.</p>

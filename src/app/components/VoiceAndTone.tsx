@@ -97,10 +97,10 @@ export function VoiceAndTone() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          <Card className="border-2" style={{ borderColor: '#91A18D', backgroundColor: '#EEF0E9' }}>
+          <Card className="border-2 border-brand-eucalyptus bg-secondary">
             <CardHeader>
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-3" style={{ backgroundColor: '#91A18D' }}>
-                <Heart className="w-6 h-6" style={{ color: '#34465C' }} />
+              <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                <Heart className="h-6 w-6" />
               </div>
               <CardTitle>Warm & Personable</CardTitle>
             </CardHeader>
@@ -111,10 +111,10 @@ export function VoiceAndTone() {
             </CardContent>
           </Card>
 
-          <Card className="border-2" style={{ borderColor: '#D6A64B', backgroundColor: '#F5EBD5' }}>
+          <Card className="border-2 border-brand-eucalyptus bg-secondary">
             <CardHeader>
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-3" style={{ backgroundColor: '#D6A64B' }}>
-                <Lightbulb className="w-6 h-6" style={{ color: '#34465C' }} />
+              <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                <Lightbulb className="h-6 w-6" />
               </div>
               <CardTitle>Helpful & Solution-Oriented</CardTitle>
             </CardHeader>
@@ -125,10 +125,10 @@ export function VoiceAndTone() {
             </CardContent>
           </Card>
 
-          <Card className="border-2" style={{ borderColor: '#438184', backgroundColor: '#E1ECEB' }}>
+          <Card className="border-2 border-brand-eucalyptus bg-secondary">
             <CardHeader>
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-3" style={{ backgroundColor: '#438184' }}>
-                <Sparkles className="w-6 h-6" style={{ color: '#FFFCF7' }} />
+              <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                <Sparkles className="h-6 w-6" />
               </div>
               <CardTitle>Positive & Bubbly</CardTitle>
             </CardHeader>

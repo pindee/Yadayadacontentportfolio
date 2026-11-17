@@ -20,4 +20,5 @@ export const FALLBACK_URLS = {
   lavaCon2026Talk: "/images/lavacon-2026-talk.png",
   contentMattersPodcast: "/images/content-matters-podcast.png",
   lavaCon2024Talk: "/images/lavacon-2024-talk.png",
+  pendomonium2024Talk: "/images/pendomonium-2024-talk.jpg",
 };

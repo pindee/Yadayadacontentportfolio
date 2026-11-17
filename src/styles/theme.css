@@ -2,84 +2,87 @@
 
 :root {
   --font-size: 16px;
-  --background: #f7f3ea;
+  --font-family-display: "Lato", Arial, sans-serif;
+  --font-family-body: "Lato", Arial, sans-serif;
+  --background: #ffffff;
   --foreground: #34465c;
-  --card: #fffcf7;
+  --card: #ffffff;
   --card-foreground: #34465c;
-  --popover: #fffcf7;
+  --popover: #ffffff;
   --popover-foreground: #34465c;
   --primary: #34465c;
-  --primary-foreground: #fffcf7;
-  --secondary: #e5e9e1;
+  --primary-foreground: #ffffff;
+  --secondary: color-mix(in srgb, #91a18d 20%, #ffffff);
   --secondary-foreground: #34465c;
-  --muted: #eeece6;
-  --muted-foreground: #5d6875;
-  --accent: #e1eceb;
+  --muted: color-mix(in srgb, #91a18d 12%, #ffffff);
+  --muted-foreground: #34465c;
+  --accent: color-mix(in srgb, #438184 13%, #ffffff);
   --accent-foreground: #34465c;
-  --destructive: #d4183d;
-  --destructive-foreground: #fffcf7;
-  --border: #d7d8d1;
+  --destructive: #34465c;
+  --destructive-foreground: #ffffff;
+  --border: color-mix(in srgb, #91a18d 42%, #ffffff);
   --input: transparent;
-  --input-background: #fffcf7;
+  --input-background: #ffffff;
   --switch-background: #91a18d;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --ring: #438184;
   --chart-1: #34465c;
   --chart-2: #438184;
-  --chart-3: #d6a64b;
+  --chart-3: #91a18d;
   --chart-4: #91a18d;
-  --chart-5: #d6a64b;
-  --radius: 0.625rem;
-  --sidebar: #fffcf7;
+  --chart-5: #438184;
+  --radius: 1rem;
+  --sidebar: #ffffff;
   --sidebar-foreground: #34465c;
   --sidebar-primary: #34465c;
-  --sidebar-primary-foreground: #fffcf7;
-  --sidebar-accent: #e5e9e1;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: color-mix(in srgb, #91a18d 20%, #ffffff);
   --sidebar-accent-foreground: #34465c;
-  --sidebar-border: #d7d8d1;
+  --sidebar-border: color-mix(in srgb, #91a18d 42%, #ffffff);
   --sidebar-ring: #438184;
   --brand-navy: #34465c;
   --brand-teal: #438184;
   --brand-eucalyptus: #91a18d;
-  --brand-gold: #d6a64b;
-  --brand-ivory: #f7f3ea;
+  --brand-white: #ffffff;
+  --brand-canvas: #ffffff;
+  --font-weight-heading: 700;
 }
 
 .dark {
-  --background: #263747;
-  --foreground: #f7f3ea;
+  --background: #34465c;
+  --foreground: #ffffff;
   --card: #34465c;
-  --card-foreground: #f7f3ea;
+  --card-foreground: #ffffff;
   --popover: #34465c;
-  --popover-foreground: #f7f3ea;
-  --primary: #f7f3ea;
+  --popover-foreground: #ffffff;
+  --primary: #ffffff;
   --primary-foreground: #34465c;
   --secondary: #438184;
-  --secondary-foreground: #fffcf7;
-  --muted: #405268;
-  --muted-foreground: #d7ded8;
+  --secondary-foreground: #ffffff;
+  --muted: color-mix(in srgb, #91a18d 24%, #34465c);
+  --muted-foreground: #ffffff;
   --accent: #438184;
-  --accent-foreground: #263747;
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: #fffcf7;
-  --border: #53667a;
-  --input: #405268;
+  --accent-foreground: #ffffff;
+  --destructive: #91a18d;
+  --destructive-foreground: #34465c;
+  --border: #91a18d;
+  --input: color-mix(in srgb, #91a18d 24%, #34465c);
   --ring: #91a18d;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
   --chart-1: #91a18d;
   --chart-2: #91a18d;
-  --chart-3: #d6a64b;
+  --chart-3: #ffffff;
   --chart-4: #438184;
-  --chart-5: #f7f3ea;
-  --sidebar: #263747;
-  --sidebar-foreground: #f7f3ea;
-  --sidebar-primary: #f7f3ea;
+  --chart-5: #ffffff;
+  --sidebar: #34465c;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ffffff;
   --sidebar-primary-foreground: #34465c;
-  --sidebar-accent: #405268;
-  --sidebar-accent-foreground: #f7f3ea;
-  --sidebar-border: #53667a;
+  --sidebar-accent: #438184;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #91a18d;
   --sidebar-ring: #91a18d;
 }
 
@@ -125,8 +128,10 @@
   --color-brand-navy: var(--brand-navy);
   --color-brand-teal: var(--brand-teal);
   --color-brand-eucalyptus: var(--brand-eucalyptus);
-  --color-brand-gold: var(--brand-gold);
-  --color-brand-ivory: var(--brand-ivory);
+  --color-brand-white: var(--brand-white);
+  --color-brand-canvas: var(--brand-canvas);
+  --font-display: var(--font-family-display);
+  --font-sans: var(--font-family-body);
 }
 
 @layer base {
@@ -136,6 +141,7 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-family-body);
   }
 
   /**
@@ -148,24 +154,28 @@
   }
 
   h1 {
+    font-family: var(--font-family-display);
     font-size: var(--text-2xl);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
   }
 
   h2 {
-    font-size: var(--text-xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+    font-family: var(--font-family-display);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-weight-heading);
+    line-height: 1.2;
   }
 
   h3 {
-    font-size: var(--text-lg);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+    font-family: var(--font-family-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-heading);
+    line-height: 1.3;
   }
 
   h4 {
+    font-family: var(--font-family-display);
     font-size: var(--text-base);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;

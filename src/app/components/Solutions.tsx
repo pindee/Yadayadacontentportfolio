@@ -101,7 +101,7 @@ export function Solutions() {
                 <div className="space-y-2">
                   {solution.deliverables.map((item, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#438184' }} />
+                      <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: 'var(--ring)' }} />
                       <span className="text-muted-foreground text-sm">{item}</span>
                     </div>
                   ))}

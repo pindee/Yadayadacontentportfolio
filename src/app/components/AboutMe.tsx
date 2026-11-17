@@ -1,144 +1,41 @@
-import image2 from "figma:asset/b6f002254c8f55414dce70e635bdb249149f00aa.png";
-import image3 from "figma:asset/2c71e58ffb188a80bd118380b7f723b76428fe6f.png";
-import familyPhoto from "../../imports/image-4.png";
-import { ImageWithAssetFallback } from "./ImageWithAssetFallback";
+import forestPhoto from "figma:asset/2c71e58ffb188a80bd118380b7f723b76428fe6f.png";
 import { FALLBACK_URLS } from "../assets/fallback-config";
+import { ImageWithAssetFallback } from "./ImageWithAssetFallback";
 
-interface AboutMeProps {
-  onNavigate: (tab: string) => void;
-}
-
-export function AboutMe({ onNavigate }: AboutMeProps) {
-  const navigateToTab = (tab: string) => {
-    onNavigate(tab);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
+export function AboutMe() {
   return (
-    <div className="space-y-8">
-      <div className="grid md:grid-cols-2 gap-8 items-start">
-        <div className="space-y-4">
-          <h2>About Me</h2>
-          <div className="p-6 rounded-lg border-l-4 mb-6" style={{ 
-            borderLeftColor: '#438184',
-            backgroundColor: '#E1ECEB'
-          }}>
-            <p className="text-muted-foreground mb-3">
-              In storytelling, "yada yada" removes unnecessary words to jump straight to what matters. 
-              My content strategy follows the same principle: eliminating fluff and ensuring every word serves a clear purpose.
+    <div>
+      <section aria-labelledby="about-heading" className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-stretch">
+        <div className="flex flex-col">
+          <p className="mb-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">The person behind the work</p>
+          <h2 id="about-heading" className="text-3xl font-semibold">About Me</h2>
+          <div className="mt-5 space-y-4 text-muted-foreground">
+            <p className="text-2xl font-semibold leading-tight text-foreground">
+              12 years shaping content for complex products.
             </p>
-            <p className="text-muted-foreground">
-              Users don't read walls of text. They scan, they skim, and they leave when content gets complicated. 
-              That's why I focus on creating content that's <strong>clear</strong>, <strong>simple</strong>, and <strong>actionable</strong>:
-              cutting through the noise to deliver exactly what users need, nothing more.
+            <p>
+              I’m a senior content strategist across content strategy, technical writing, instructional design, and product content. “Yada yada” is my working principle: remove the noise, find what matters, and make every word useful.
+            </p>
+            <p>
+              Today, I focus on trusted content that works for both people and machines. I combine human-centered writing with structured content, governance, measurement, and responsible AI practices to create systems that are clear, reusable, and built to scale.
             </p>
           </div>
-          <p className="text-muted-foreground">
-            I'm a senior content strategist with over 10 years of experience in educational content and technology.
-            I have over 5 years in content strategy helping companies find their voice and tone and creating and identifying tools for writers to stick to the voice and tone. My approach combines strategic thinking 
-            with creative problem-solving to create content that users understand and appreciate.
-          </p>
-          <p className="text-muted-foreground">
-            Creating content has changed. Content is no longer written only for the person reading a screen.
-            It also needs to work across search, AI tools, support experiences, and connected systems.
-            That means it must be structured, consistent, well governed, and grounded in reliable sources.
-          </p>
-          <p className="text-muted-foreground">
-            I create trusted content that works for both people and machines. For users, it is clear,
-            accessible, and useful. For machines, it has the structure and context needed to be found,
-            interpreted, and reused accurately. By combining human-centered writing with content models,
-            metadata, governance, and responsible AI practices, I help teams build content ecosystems
-            that people can trust and technology can understand.
-          </p>
-          <p className="text-muted-foreground">
-            I believe that great content starts with understanding your users. Whether 
-            I'm developing a comprehensive content strategy or crafting microcopy, I focus 
-            on creating experiences that are clear, engaging, and authentic.
-          </p>
-          <p className="text-muted-foreground">
-            When I'm not working, you'll find me traveling, paddleboarding, playing boardgames (while admiring or critiquing their written instructions), 
-            speaking at content strategy conferences, or mentoring aspiring content professionals.
-          </p>
-        <h3 className="mb-4">Life Beyond Content</h3>
-        <p className="text-muted-foreground mb-4">
-          I believe that the best content strategists bring diverse experiences to their work. 
-          My adventurous spirit and love for new challenges directly influence how I approach content problems,
-          with courage, creativity, and a willingness to take calculated risks.
-        </p>
-        <p className="text-muted-foreground mb-4">
-          Whether I'm jumping out of a plane at 16,000 feet, navigating a challenging ropes course, 
-          or spending quality time with my family, I'm constantly learning lessons about trust, clarity, 
-          and communication. These experiences remind me that great content, like great adventures, 
-          requires careful planning, clear direction, and the confidence to leap when the moment is right.
-        </p>
-        <p className="text-muted-foreground">
-          Family is my anchor and my inspiration. The same patience, understanding, and adaptability 
-          I bring to family life translates into how I collaborate with teams and craft content that 
-          resonates with diverse audiences. After all, whether you're explaining why we need to jump 
-          now or why a user needs to click here, it's all about clear, compassionate communication.
-        </p>
-          
+          <div className="mt-10 border-t border-ring pt-4">
+            <h3 className="font-semibold">Life Beyond Content</h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+              Outside work, I travel, paddleboard, play board games, spend time with my family, and occasionally jump from perfectly good airplanes.
+            </p>
+          </div>
         </div>
-        
-        <div className="space-y-4">
-          <div className="aspect-video rounded-lg overflow-hidden">
-            <ImageWithAssetFallback
-              src={familyPhoto}
-              fallbackSrc={FALLBACK_URLS.familyPhoto}
-              alt="Swimming at the lake with family"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="aspect-video rounded-lg overflow-hidden">
-            <ImageWithAssetFallback
-              src={image2}
-              fallbackSrc={FALLBACK_URLS.skydivingAdventure}
-              alt="Skydiving adventure"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="aspect-video rounded-lg overflow-hidden">
-            <ImageWithAssetFallback
-              src={image3}
-              fallbackSrc={FALLBACK_URLS.ropesCourseAdventure}
-              alt="Ropes course"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          
-
-      
+        <div className="min-h-72 overflow-hidden rounded-xl border border-border bg-muted md:h-full">
+          <ImageWithAssetFallback
+            src={forestPhoto}
+            fallbackSrc={FALLBACK_URLS.ropesCourseAdventure}
+            alt="Navigating a ropes course in the forest"
+            className="h-full w-full object-cover"
+          />
         </div>
-      </div>
-      
-      <div className="grid md:grid-cols-3 gap-6 mt-12">
-        <button
-          onClick={() => navigateToTab("projects")}
-          className="p-6 rounded-lg border-2 text-left transition-shadow hover:shadow-md cursor-pointer"
-          style={{ backgroundColor: '#EEF0E9', borderColor: '#91A18D' }}
-        >
-          <div className="mb-2" style={{ color: '#34465C' }}>12</div>
-          <p className="text-muted-foreground">Years of Content Experience</p>
-        </button>
-        <button
-          onClick={() => navigateToTab("presentations")}
-          className="p-6 rounded-lg border-2 text-left transition-shadow hover:shadow-md cursor-pointer"
-          style={{ backgroundColor: '#EEF0E9', borderColor: '#91A18D' }}
-        >
-          <div className="mb-2" style={{ color: '#34465C' }}>4</div>
-          <p className="text-muted-foreground">Conference Talks</p>
-        </button>
-        <button
-          onClick={() => navigateToTab("presentations")}
-          className="p-6 rounded-lg border-2 text-left transition-shadow hover:shadow-md cursor-pointer"
-          style={{ backgroundColor: '#EEF0E9', borderColor: '#91A18D' }}
-        >
-          <div className="mb-2" style={{ color: '#34465C' }}>2</div>
-          <p className="text-muted-foreground">Podcast Talks</p>
-        </button>
-      </div>
-
-      
+      </section>
     </div>
   );
 }

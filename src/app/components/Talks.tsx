@@ -1,4 +1,5 @@
 import { useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 import {
   Card,
   CardContent,
@@ -16,6 +17,7 @@ import {
   Presentation,
   Mic,
   Info,
+  X,
 } from "lucide-react";
 import { AccessRequestModal } from "./AccessRequestModal";
 import { ImageWithAssetFallback } from "./ImageWithAssetFallback";
@@ -29,8 +31,9 @@ import button2026TalkGraphic from "../../imports/image.png";
 import lavaCon2026TalkGraphic from "../../imports/image-1.png";
 import contentMattersPodcastGraphic from "../../imports/image-2.png";
 import lavaCon2024TalkGraphic from "../../imports/image-3.png";
+import pendomonium2024TalkGraphic from "../../imports/Media__4_.jpg";
 
-export function ConferencePresentations() {
+export function Talks() {
   const [modal, setModal] = useState<{
     open: boolean;
     title: string;
@@ -40,9 +43,23 @@ export function ConferencePresentations() {
     title: "",
     label: "",
   });
+  const [slideDeck, setSlideDeck] = useState<{
+    title: string;
+    embedUrl: string;
+    sourceUrl: string;
+  } | null>(null);
 
   const openModal = (title: string, label: string) =>
     setModal({ open: true, title, label });
+
+  const openSlideDeck = (
+    title: string,
+    embedUrl: string,
+    sourceUrl: string,
+  ) => {
+    setModal({ open: false, title: "", label: "" });
+    setSlideDeck({ title, embedUrl, sourceUrl });
+  };
 
   const upcoming = [
     {
@@ -72,11 +89,11 @@ export function ConferencePresentations() {
     },
     {
       type: "podcast" as const,
-      title: "TBD",
+      title: "Episode details coming soon",
       conference: "Inside Tech Comm",
       host: "Zohra Mubeena Mutabanna",
       location: "Online",
-      date: "TBD",
+      date: "To be announced",
       about:
         "Inside Tech Comm explores how technology, content, and the changing workplace are reshaping technical communication and the people behind it. Through candid conversations with practitioners and thinkers, the show looks beyond tools and trends to examine how the work is evolving, how people are navigating that change, and what it means for the future of the profession.",
       description:
@@ -108,6 +125,12 @@ export function ConferencePresentations() {
       ],
       hasVideo: true,
       hasSlides: true,
+      slideDeck: {
+        embedUrl:
+          "https://docs.google.com/presentation/d/1-B3nF5zO3FGYB668Fn9nxtg0tmlNAyGI/preview",
+        sourceUrl:
+          "https://docs.google.com/presentation/d/1-B3nF5zO3FGYB668Fn9nxtg0tmlNAyGI/edit?usp=sharing&ouid=115334733033485079024&rtpof=true&sd=true",
+      },
       graphic: lavaCon2026TalkGraphic,
       graphicFallback: FALLBACK_URLS.lavaCon2026Talk,
       graphicAlt:
@@ -131,6 +154,12 @@ export function ConferencePresentations() {
       ],
       hasVideo: true,
       hasSlides: true,
+      slideDeck: {
+        embedUrl:
+          "https://docs.google.com/presentation/d/155uXPgJHY3fty7dxge7PwY5EtK0qijo9/preview",
+        sourceUrl:
+          "https://docs.google.com/presentation/d/155uXPgJHY3fty7dxge7PwY5EtK0qijo9/edit?usp=sharing&ouid=115334733033485079024&rtpof=true&sd=true",
+      },
       graphic: button2026TalkGraphic,
       graphicFallback: FALLBACK_URLS.button2026Talk,
       graphicAlt:
@@ -155,6 +184,12 @@ export function ConferencePresentations() {
       ],
       hasVideo: true,
       hasSlides: true,
+      slideDeck: {
+        embedUrl:
+          "https://docs.google.com/presentation/d/1b5dZ1K-GmidIP-Y-Lm3BgYIvu2UtY147/edit?usp=sharing&ouid=115334733033485079024&rtpof=true&sd=true",
+        sourceUrl:
+          "https://docs.google.com/presentation/d/1b5dZ1K-GmidIP-Y-Lm3BgYIvu2UtY147/edit?usp=sharing&ouid=115334733033485079024&rtpof=true&sd=true",
+      },
       graphic: lavaCon2024TalkGraphic,
       graphicFallback: FALLBACK_URLS.lavaCon2024Talk,
       graphicAlt:
@@ -178,6 +213,16 @@ export function ConferencePresentations() {
       ],
       hasVideo: false,
       hasSlides: true,
+      graphic: pendomonium2024TalkGraphic,
+      graphicFallback: FALLBACK_URLS.pendomonium2024Talk,
+      graphicAlt:
+        "Emma Pindera presenting Pushing the Limits with our Resource Center at Pendomonium 2024",
+      slideDeck: {
+        embedUrl:
+          "https://docs.google.com/presentation/d/1yspckYA1Nuhrn-IB11PMVHxcFdj4HKy9Nox2Wr0W6xg/preview",
+        sourceUrl:
+          "https://docs.google.com/presentation/d/1yspckYA1Nuhrn-IB11PMVHxcFdj4HKy9Nox2Wr0W6xg/edit?usp=sharing",
+      },
     },
   ];
 
@@ -200,7 +245,7 @@ export function ConferencePresentations() {
             <Card
               key={index}
               className="border-2"
-              style={{ borderColor: "#D6A64B" }}
+              style={{ borderColor: "var(--brand-teal)" }}
             >
               <CardHeader>
                 <div
@@ -214,8 +259,8 @@ export function ConferencePresentations() {
                     <div className="flex flex-wrap items-center gap-2 mb-3">
                       <Badge
                         style={{
-                          backgroundColor: "#D6A64B",
-                          color: "#263747",
+                          backgroundColor: "var(--brand-teal)",
+                          color: "var(--brand-white)",
                         }}
                       >
                         Upcoming
@@ -251,7 +296,7 @@ export function ConferencePresentations() {
                               <button
                                 type="button"
                                 aria-label={`About ${pres.conference}`}
-                                className="inline-flex size-5 items-center justify-center rounded-full border border-[#91A18D] text-[#438184] transition-colors hover:bg-[#EEF0E9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#438184]"
+                                className="inline-flex size-5 items-center justify-center rounded-full border border-[var(--brand-eucalyptus)] text-[var(--ring)] transition-colors hover:bg-[var(--secondary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]"
                               >
                                 <Info className="size-3" />
                               </button>
@@ -306,8 +351,8 @@ export function ConferencePresentations() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium border transition-colors hover:bg-muted"
                       style={{
-                        borderColor: "#91A18D",
-                        color: "#34465C",
+                        borderColor: "var(--brand-eucalyptus)",
+                        color: "var(--primary)",
                       }}
                     >
                       <Mic className="w-3.5 h-3.5" />
@@ -319,8 +364,8 @@ export function ConferencePresentations() {
                       href={pres.registerUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium text-white transition-opacity hover:opacity-90"
-                      style={{ backgroundColor: "#34465C" }}
+                      className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+                      style={{ backgroundColor: "var(--primary)" }}
                     >
                       Register now
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -339,8 +384,8 @@ export function ConferencePresentations() {
         <div
           className="mb-6 p-4 rounded-lg border-l-4 flex flex-col sm:flex-row sm:items-center gap-4"
           style={{
-            borderLeftColor: "#91A18D",
-            backgroundColor: "#EEF0E9",
+            borderLeftColor: "var(--brand-eucalyptus)",
+            backgroundColor: "var(--secondary)",
           }}
         >
           <p className="text-sm text-muted-foreground flex-1">
@@ -359,8 +404,8 @@ export function ConferencePresentations() {
                 "all conference resources",
               )
             }
-            className="shrink-0 inline-flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium border transition-colors hover:bg-white"
-            style={{ borderColor: "#438184", color: "#34465C" }}
+            className="shrink-0 inline-flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium border transition-colors hover:bg-card"
+            style={{ borderColor: "var(--ring)", color: "var(--primary)" }}
           >
             <Presentation className="w-3.5 h-3.5" />
             Request all talks
@@ -411,7 +456,7 @@ export function ConferencePresentations() {
                                 <button
                                   type="button"
                                   aria-label={`About ${presentation.conference}`}
-                                  className="inline-flex size-5 items-center justify-center rounded-full border border-[#91A18D] text-[#438184] transition-colors hover:bg-[#EEF0E9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#438184]"
+                                  className="inline-flex size-5 items-center justify-center rounded-full border border-[var(--brand-eucalyptus)] text-[var(--ring)] transition-colors hover:bg-[var(--secondary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]"
                                 >
                                   <Info className="size-3" />
                                 </button>
@@ -441,9 +486,10 @@ export function ConferencePresentations() {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  {presentation.description}
-                </p>
+                <div className="mb-5">
+                  <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">Public summary</p>
+                  <p className="text-muted-foreground">{presentation.description}</p>
+                </div>
                 <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
                   <div className="flex items-center gap-2">
                     <Calendar className="w-4 h-4" />
@@ -472,8 +518,8 @@ export function ConferencePresentations() {
                       }
                       className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium border transition-colors hover:bg-muted"
                       style={{
-                        borderColor: "#91A18D",
-                        color: "#34465C",
+                        borderColor: "var(--brand-eucalyptus)",
+                        color: "var(--primary)",
                       }}
                     >
                       <Play className="w-3.5 h-3.5" />
@@ -485,19 +531,24 @@ export function ConferencePresentations() {
                       Recording unavailable
                     </span>
                   )}
-                  {presentation.hasSlides && (
+                  {presentation.hasSlides && presentation.slideDeck && (
                     <button
+                      type="button"
                       onClick={() =>
-                        openModal(presentation.title, "slides")
+                        openSlideDeck(
+                          presentation.title,
+                          presentation.slideDeck.embedUrl,
+                          presentation.slideDeck.sourceUrl,
+                        )
                       }
                       className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium border transition-colors hover:bg-muted"
                       style={{
-                        borderColor: "#91A18D",
-                        color: "#34465C",
+                        borderColor: "var(--brand-eucalyptus)",
+                        color: "var(--primary)",
                       }}
                     >
                       <Presentation className="w-3.5 h-3.5" />
-                      Request slides
+                      View slide deck
                     </button>
                   )}
                 </div>
@@ -510,8 +561,8 @@ export function ConferencePresentations() {
       <Card
         className="border-2"
         style={{
-          backgroundColor: "#E1ECEB",
-          borderColor: "#438184",
+          backgroundColor: "var(--accent)",
+          borderColor: "var(--ring)",
         }}
       >
         <CardHeader>
@@ -556,6 +607,55 @@ export function ConferencePresentations() {
         itemTitle={modal.title}
         requestLabel={modal.label}
       />
+
+      <Dialog.Root
+        open={Boolean(slideDeck)}
+        onOpenChange={(open) => {
+          if (!open) setSlideDeck(null);
+        }}
+      >
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 z-40 bg-foreground/50" />
+          <Dialog.Content className="fixed left-1/2 top-1/2 z-50 w-[calc(100%-2rem)] max-w-6xl -translate-x-1/2 -translate-y-1/2 rounded-xl border border-border bg-card p-4 text-card-foreground shadow-xl focus:outline-none sm:p-6">
+            <div className="mb-4 flex items-start justify-between gap-4">
+              <div>
+                <Dialog.Title className="text-lg font-medium">
+                  {slideDeck?.title}
+                </Dialog.Title>
+                <Dialog.Description className="mt-1 text-sm text-muted-foreground">
+                  Use the controls in the presentation to move through the slide deck.
+                </Dialog.Description>
+              </div>
+              <Dialog.Close className="rounded-md p-2 transition-colors hover:bg-muted" aria-label="Close slide deck">
+                <X className="h-5 w-5" aria-hidden="true" />
+              </Dialog.Close>
+            </div>
+            {slideDeck && (
+              <>
+                <div className="overflow-hidden rounded-lg border border-border bg-muted">
+                  <iframe
+                    src={slideDeck.embedUrl}
+                    title={`${slideDeck.title} slide deck`}
+                    className="aspect-video w-full"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="mt-4 flex justify-end">
+                  <a
+                    href={slideDeck.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-md border border-primary px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                  >
+                    Open in Google Slides
+                    <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                </div>
+              </>
+            )}
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
     </div>
   );
 }

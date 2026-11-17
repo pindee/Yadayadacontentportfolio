@@ -1,123 +1,82 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
-import { 
-  Target,
-  LayoutGrid,
-  Volume2,
-  Bot,
-  GraduationCap,
+import {
   BarChart3,
-  Braces
+  Bot,
+  Braces,
+  CheckCircle2,
+  LayoutGrid,
+  Target,
+  Volume2,
 } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+
+const services = [
+  {
+    icon: Target,
+    title: "Content Strategy",
+    description: "Align content with user needs, product priorities, regulatory requirements, and measurable business goals.",
+    deliverables: ["Audits and roadmaps", "Information architecture", "Success measures"],
+  },
+  {
+    icon: LayoutGrid,
+    title: "Content Design Systems",
+    description: "Create reusable patterns, standards, and governance that help distributed teams make consistent decisions.",
+    deliverables: ["Pattern libraries", "Style guidance", "Governance models"],
+  },
+  {
+    icon: Braces,
+    title: "Content Engineering",
+    description: "Turn guidance into structured, machine-readable rules that can travel across tools and delivery channels.",
+    deliverables: ["Content models", "Rules and metadata", "Tool integrations"],
+  },
+  {
+    icon: Bot,
+    title: "AI-Ready Workflows",
+    description: "Design focused AI agents and prompt systems with clear inputs, constraints, evaluation, and human review.",
+    deliverables: ["Agent workflows", "Prompt templates", "Quality scorecards"],
+  },
+  {
+    icon: Volume2,
+    title: "Voice, Tone and UX Writing",
+    description: "Make product experiences clearer through practical voice guidance, interface copy, and content patterns.",
+    deliverables: ["Voice systems", "UI copy", "Before-and-after reviews"],
+  },
+  {
+    icon: BarChart3,
+    title: "Measurement and Optimization",
+    description: "Connect content decisions to evidence through analytics, research, audits, and continuous improvement.",
+    deliverables: ["Measurement plans", "Content dashboards", "Review cycles"],
+  },
+];
 
 export function Skills() {
-  const strategicAreas = [
-    {
-      icon: Target,
-      title: "Strategic Direction & Cohesion",
-      description: "I define content strategy across products, platforms, and touchpoints, aligning language with business goals, product vision, and user outcomes.",
-      capabilities: [
-        "I ensure voice, tone, and terminology remain consistent across squads and markets",
-        "I embed content strategy into product and engineering roadmaps",
-        "I influence decisions early ; not just editing late"
-      ]
-    },
-    {
-      icon: LayoutGrid,
-      title: "Design System Integration",
-      description: "I act as the content counterpart to the design system, creating reusable content patterns, naming frameworks, UI text components, and tone tokens.",
-      capabilities: [
-        "I partner with Design System teams to evolve language and interaction patterns in sync",
-        "I enable squads to move quickly while staying aligned",
-        "I maintain governance models and documentation for correct system usage"
-      ]
-    },
-    {
-      icon: Braces,
-      title: "Content Engineering",
-      description: "I turn content standards into structured, rule-based, and machine-readable systems that work for both people and AI.",
-      capabilities: [
-        "I translate design-system guidance into reusable rules, templates, variables, and guardrails",
-        "I build AI skills that make content review and quality checks available on demand",
-        "I bring content standards into design tools and source-code workflows so issues are caught before release",
-        "I write and update custom CSS for personalized guides and resource hub experiences"
-      ]
-    },
-    {
-      icon: Volume2,
-      title: "Voice, Tone & Structured Writing",
-      description: "I own and evolve the voice and tonal system, ensuring flexibility across contexts while maintaining brand coherence.",
-      capabilities: [
-        "I implement structured writing models across the organization",
-        "I create consistent, machine-readable, and human-friendly content",
-        "I embed structured authoring practices into product content and documentation"
-      ]
-    },
-    {
-      icon: Bot,
-      title: "AI Enablement & Prompt Libraries",
-      description: "I lead the integration of AI-assisted authoring into content workflows, enabling teams to scale content creation without sacrificing quality.",
-      capabilities: [
-        "I develop and govern prompt libraries : standardized, reusable prompt patterns",
-        "I ensure AI outputs align with brand voice, product strategy, and accessibility standards",
-        "I act as strategic owner of language in AI contexts (assistants, copilots, chat interfaces)"
-      ]
-    },
-    {
-      icon: GraduationCap,
-      title: "Organizational Enablement & Skilling",
-      description: "I build internal capacity for good writing by creating education programs, office hours, guidelines, and tools that upskill teams.",
-      capabilities: [
-        "I develop content frameworks for internal and external audiences",
-        "I establish content operations practices to scale quality across distributed teams",
-        "I act as strategic connector between Product, Engineering, UX, Marketing, and Legal"
-      ]
-    },
-    {
-      icon: BarChart3,
-      title: "Measurement & Continuous Improvement",
-      description: "I define content success metrics tied to product and organizational goals such as task completion, error reduction, conversion, comprehension, and support deflection.",
-      capabilities: [
-        "I use quantitative analytics and qualitative research to evolve content patterns",
-        "I conduct audits and feedback loops to keep systems clean and scalable",
-        "I ensure content becomes a measurable, strategic asset driving business impact"
-      ]
-    }
-  ];
-
   return (
-    <div className="space-y-8">
-      <div>
-        <h2 className="mb-4">My Skills</h2>
-        <div className="space-y-4 max-w-4xl">
-          <p className="text-muted-foreground">
-            In a modern Product–Engineering–UX organization, Content Designers focus on crafting language within features: writing UI copy, help content, onboarding flows, and micro-interactions that make individual user journeys clear and usable.
-          </p>
-          <p className="text-muted-foreground">
-            I work systemically and programmatically ,ensuring that all those individual pieces work together as a cohesive, scalable, and intelligent content ecosystem. I shape frameworks, govern patterns, and operationalize language across the entire product lifecycle and organization.
-          </p>
-        </div>
-      </div>
+    <div className="space-y-10">
+      <section aria-labelledby="what-i-do-heading">
+        <p className="mb-2 text-sm font-medium uppercase tracking-wider text-muted-foreground">Skills and solutions</p>
+        <h2 id="what-i-do-heading" className="text-3xl font-semibold leading-tight">What I Do</h2>
+        <p className="mt-3 max-w-3xl text-muted-foreground">
+          I help product organizations make content clearer, more consistent, easier to govern, and ready for AI-enabled experiences.
+        </p>
+      </section>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {strategicAreas.map((area, index) => {
-          const Icon = area.icon;
+      <section aria-label="Services" className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {services.map((service) => {
+          const Icon = service.icon;
           return (
-            <Card key={index} className="flex flex-col">
+            <Card key={service.title} className="flex flex-col">
               <CardHeader>
-                <div className="flex items-start gap-3 mb-2">
-                  <div className="p-2 rounded-lg" style={{ backgroundColor: '#EEF0E9' }}>
-                    <Icon className="w-5 h-5" style={{ color: '#438184' }} />
-                  </div>
-                  <CardTitle className="flex-1">{area.title}</CardTitle>
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
                 </div>
-                <CardDescription>{area.description}</CardDescription>
+                <CardTitle className="text-xl font-semibold leading-tight">{service.title}</CardTitle>
+                <CardDescription className="leading-6">{service.description}</CardDescription>
               </CardHeader>
-              <CardContent className="flex-1">
+              <CardContent className="mt-auto">
                 <ul className="space-y-2">
-                  {area.capabilities.map((capability, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{capability}</span>
+                  {service.deliverables.map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <CheckCircle2 className="h-4 w-4 shrink-0 text-foreground" aria-hidden="true" />
+                      {item}
                     </li>
                   ))}
                 </ul>
@@ -125,42 +84,24 @@ export function Skills() {
             </Card>
           );
         })}
-      </div>
+      </section>
 
-      <Card className="border-2" style={{ 
-        backgroundColor: '#EEF0E9',
-        borderColor: '#91A18D'
-      }}>
-        <CardHeader>
-          <CardTitle>Why This Matters</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground mb-4">
-            In a world where multiple teams ship in parallel, AI accelerates content generation, and structured writing underpins everything from UI to API docs, my work serves as the connective tissue that holds it all together.
-          </p>
-          <div className="space-y-3">
-            <p className="text-muted-foreground">Through my work, I ensure that:</p>
-            <ul className="space-y-2">
-              <li className="flex items-start gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Voice, tone, and structure are unified and intentional across all user and employee experiences</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Design systems, AI models, and prompt libraries work together to deliver coherent, scalable content</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Teams across the org are empowered to write well ; not just content specialists</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span className="text-muted-foreground">Content becomes a measurable, strategic asset that drives clarity, trust, efficiency, and business impact</span>
-              </li>
-            </ul>
+      <section className="rounded-xl border border-border bg-primary p-6 text-primary-foreground sm:p-8">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 className="text-3xl font-semibold leading-tight">Need a clearer content system?</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 opacity-80">
+              I’m available for content strategy, design systems, AI workflow design, audits, and speaking engagements.
+            </p>
           </div>
-        </CardContent>
-      </Card>
+          <a
+            href="mailto:emmapindera@hotmail.com"
+            className="inline-flex shrink-0 items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-foreground transition-opacity hover:opacity-90"
+          >
+            Start a conversation
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

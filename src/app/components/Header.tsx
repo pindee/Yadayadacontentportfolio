@@ -1,85 +1,139 @@
-import { Mail, Linkedin } from "lucide-react";
+import { useState } from "react";
+import { ChevronDown, ChevronUp, Linkedin, Mail } from "lucide-react";
 import headerImage from "figma:asset/64f1fc1f0d7ef1c4ebf13d4578c2b44576bf5831.png";
-import logoImage from "figma:asset/75f4d8401f9705e2ddfe66989fd8fc444db1f19a.png";
 import iconLogo from "figma:asset/659c4452656d58cf0e110b9213e6f29b92650b40.png";
-import { ImageWithAssetFallback } from "./ImageWithAssetFallback";
+import logoImage from "figma:asset/75f4d8401f9705e2ddfe66989fd8fc444db1f19a.png";
 import { FALLBACK_URLS } from "../assets/fallback-config";
+import { ImageWithAssetFallback } from "./ImageWithAssetFallback";
 
-export function Header() {
+interface HeaderProps {
+  onNavigate: (tab: string) => void;
+}
+
+export function Header({ onNavigate }: HeaderProps) {
+  const [isBannerExpanded, setIsBannerExpanded] = useState(true);
+
+  const navigateTo = (tab: string) => {
+    onNavigate(tab);
+    requestAnimationFrame(() => {
+      document.getElementById("portfolio-content")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  };
+
   return (
-    <header className="border-b-4 shadow-sm" style={{ 
-      borderBottomColor: '#34465C',
-      background: 'linear-gradient(135deg, #F7F3EA 0%, #E4E8DE 100%)'
-    }}>
-      <div className="container mx-auto px-4 py-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col gap-6">
-            {/* Top row: Headshot/name/links, Icon Logo, and Text Logo */}
-            <div className="flex flex-col md:flex-row gap-8 items-center justify-between">
-              {/* Left: Headshot and name/links */}
-              <div className="flex items-center gap-6">
-                <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-offset-4 ring-offset-[#F7F3EA]" style={{ ringColor: '#438184' }}>
-                  <ImageWithAssetFallback
-                    src={headerImage}
-                    fallbackSrc={FALLBACK_URLS.professionalHeadshot}
-                    alt="Emma Pindera"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="text-center md:text-left">
-                  <h2 className="mb-1">Emma Pindera, MET</h2>
-                  <p className="text-muted-foreground mb-3">
-                    Senior Content Strategist
-                  </p>
-                  <div className="flex gap-4 justify-center md:justify-start">
-                    <a
-                      href="mailto:emmapindera@hotmail.com"
-                      className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      <Mail className="w-5 h-5" />
-                      <span>Email</span>
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/in/emmapindera/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      <Linkedin className="w-5 h-5" />
-                      <span>LinkedIn</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Center: Icon Logo */}
-              <div className="flex items-center justify-center">
-                <ImageWithAssetFallback
-                  src={iconLogo}
-                  fallbackSrc={FALLBACK_URLS.handWritingIconLogo}
-                  alt="Yada Yada Icon"
-                  className="h-12"
-                />
-              </div>
-              
-              {/* Right: Logo */}
-              <div className="flex items-center justify-center">
-                <ImageWithAssetFallback
-                  src={logoImage}
-                  fallbackSrc={FALLBACK_URLS.yadaYadaTextLogo}
-                  alt="Yada Yada content" 
-                  className="h-24"
-                />
-              </div>
+    <header className="relative border-b border-border bg-background">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="flex items-center justify-between border-b border-border py-5">
+          <div className={`items-center gap-3 ${isBannerExpanded ? "flex" : "hidden md:flex"}`}>
+            <ImageWithAssetFallback
+              src={iconLogo}
+              fallbackSrc={FALLBACK_URLS.handWritingIconLogo}
+              alt=""
+              className="h-9 w-auto object-contain"
+            />
+            <ImageWithAssetFallback
+              src={logoImage}
+              fallbackSrc={FALLBACK_URLS.yadaYadaTextLogo}
+              alt="Yada Yada content"
+              className="h-11 w-auto object-contain"
+            />
+          </div>
+
+          {!isBannerExpanded && (
+            <div className="mr-auto md:mx-auto md:text-center">
+              <p className="font-display text-sm font-bold leading-tight text-foreground sm:text-base">
+                Emma Pindera, MET
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Senior Content Strategist
+              </p>
             </div>
-            
-            {/* Bottom row: Tagline */}
-            <p className="text-muted-foreground text-center">
-              "Yada yada" skips the fluff to get to what matters. My content does the same, ensuring every word serves a clear purpose.
-            </p>
+          )}
+
+          <div className="flex items-center gap-2 sm:gap-3">
+            <a
+              href="mailto:emmapindera@hotmail.com"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-secondary sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-2"
+              aria-label="Email Emma Pindera"
+            >
+              <Mail className="h-4 w-4" aria-hidden="true" />
+              <span className="hidden text-sm font-bold sm:inline">Email</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/emmapindera/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground transition-opacity hover:opacity-90 sm:h-auto sm:w-auto sm:gap-2 sm:px-4 sm:py-2"
+              aria-label="Emma Pindera on LinkedIn"
+            >
+              <Linkedin className="h-4 w-4" aria-hidden="true" />
+              <span className="hidden text-sm font-bold sm:inline">LinkedIn</span>
+            </a>
           </div>
         </div>
+
+        {isBannerExpanded && (
+        <div id="portfolio-intro-banner" className="grid items-center gap-10 py-14 md:grid-cols-[1fr_auto] md:py-20">
+          <div>
+            <p className="mb-5 text-sm font-bold uppercase tracking-[0.18em] text-brand-teal">
+              Emma Pindera · Senior Content Strategist
+            </p>
+            <h1 className="max-w-4xl font-display text-4xl font-black leading-[1.08] tracking-tight text-foreground sm:text-5xl md:text-6xl">
+              Words with purpose.
+              <span className="block text-brand-teal">Content with strategy.</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
+              “Yada yada” skips the fluff to get to what matters. My work does the same, turning complex content and guidelines into clear, governed systems that teams can use across products, platforms, and AI-enabled workflows.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={() => navigateTo("projects")}
+                className="inline-flex items-center rounded-full border border-primary px-6 py-3 text-base font-bold text-foreground transition-colors hover:bg-secondary"
+              >
+                Explore my work
+              </button>
+              <button
+                type="button"
+                onClick={() => navigateTo("presentations")}
+                className="inline-flex items-center rounded-full border border-primary px-6 py-3 text-base font-bold text-foreground transition-colors hover:bg-secondary"
+              >
+                Listen to my talks
+              </button>
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-48 md:w-56">
+            <div className="absolute -inset-3 rounded-full bg-secondary" aria-hidden="true" />
+            <div className="relative aspect-square overflow-hidden rounded-full border-4 border-background">
+              <ImageWithAssetFallback
+                src={headerImage}
+                fallbackSrc={FALLBACK_URLS.professionalHeadshot}
+                alt="Emma Pindera"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+        )}
       </div>
+      <button
+        type="button"
+        onClick={() => setIsBannerExpanded((expanded) => !expanded)}
+        aria-expanded={isBannerExpanded}
+        aria-controls="portfolio-intro-banner"
+        aria-label={isBannerExpanded ? "Minimize banner" : "Show intro banner"}
+        className="absolute bottom-0 left-1/2 flex h-10 w-10 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full bg-background text-foreground shadow-sm transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        {isBannerExpanded ? (
+          <ChevronUp className="h-5 w-5" aria-hidden="true" />
+        ) : (
+          <ChevronDown className="h-5 w-5" aria-hidden="true" />
+        )}
+      </button>
     </header>
   );
 }
