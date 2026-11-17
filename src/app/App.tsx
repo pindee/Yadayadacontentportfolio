@@ -25,14 +25,29 @@ export default function App() {
     <div className="min-h-screen bg-background">
       <Header onNavigate={setActiveTab} />
       
-      <main id="portfolio-content" className="container mx-auto px-4 py-12 md:py-20">
+      <main id="portfolio-content" className="container mx-auto px-4 py-8 md:py-20">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="max-w-6xl mx-auto">
-          <TabsList className="mb-8 grid h-auto w-full grid-cols-2 gap-1 sm:grid-cols-5">
-            <TabsTrigger value="about">About Me</TabsTrigger>
-            <TabsTrigger value="voice">Voice & Tone</TabsTrigger>
-            <TabsTrigger value="projects">My Work</TabsTrigger>
-            <TabsTrigger value="skills">What I Do</TabsTrigger>
-            <TabsTrigger value="presentations">My Talks</TabsTrigger>
+          <TabsList className="mb-6 grid h-auto w-full grid-cols-5 gap-1 sm:mb-8">
+            <TabsTrigger value="about">
+              <span className="sm:hidden">About</span>
+              <span className="hidden sm:inline">About Me</span>
+            </TabsTrigger>
+            <TabsTrigger value="voice">
+              <span className="sm:hidden">Voice</span>
+              <span className="hidden sm:inline">Voice & Tone</span>
+            </TabsTrigger>
+            <TabsTrigger value="projects">
+              <span className="sm:hidden">Work</span>
+              <span className="hidden sm:inline">My Work</span>
+            </TabsTrigger>
+            <TabsTrigger value="skills">
+              <span className="sm:hidden">Services</span>
+              <span className="hidden sm:inline">What I Do</span>
+            </TabsTrigger>
+            <TabsTrigger value="presentations">
+              <span className="sm:hidden">Talks</span>
+              <span className="hidden sm:inline">My Talks</span>
+            </TabsTrigger>
           </TabsList>
           
           <TabsContent value="about" className="mt-0">
