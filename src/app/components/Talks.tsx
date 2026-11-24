@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
 import {
   Calendar,
   MapPin,
@@ -48,6 +49,10 @@ export function Talks() {
     embedUrl: string;
     sourceUrl: string;
   } | null>(null);
+  const [audioPlayer, setAudioPlayer] = useState<{
+    title: string;
+    embedUrl: string;
+  } | null>(null);
 
   const openModal = (title: string, label: string) =>
     setModal({ open: true, title, label });
@@ -64,31 +69,6 @@ export function Talks() {
   const upcoming = [
     {
       type: "podcast" as const,
-      title: "Building Adaptable Content Systems with AI",
-      conference: "The Content Matters Podcast",
-      host: "Barb Mosher Zinck",
-      location: "Online",
-      date: "November 19, 2026",
-      about:
-        "The Content Matters Podcast is a monthly podcast sponsored by Ingeniux. It dives into everything content practitioners need to create great content-rich experiences, whether for technical publishing, web experiences, or customer experience. I'll be joining host Barb Mosher Zinck to share my perspective on content strategy.",
-      description:
-        "How can teams use AI to improve content workflows without losing consistency or human judgment? I join Barb Mosher Zinck to discuss practical AI use cases across content audits, design systems, and technical documentation.",
-      topics: [
-        "Content Strategy",
-        "Content Operations",
-        "Customer Experience",
-      ],
-      podcastUrl:
-        "https://info.ingeniux.com/content-matters-podcast",
-      registerUrl:
-        "https://www.linkedin.com/events/7523429610462711808/",
-      graphic: contentMattersPodcastGraphic,
-      graphicFallback: FALLBACK_URLS.contentMattersPodcast,
-      graphicAlt:
-        "Content Matters podcast graphic for Building Adaptable Content Systems with AI",
-    },
-    {
-      type: "podcast" as const,
       title: "Episode details coming soon",
       conference: "Inside Tech Comm",
       host: "Zohra Mubeena Mutabanna",
@@ -103,11 +83,37 @@ export function Talks() {
         "Content Strategy",
       ],
       podcastUrl: "https://www.insidetechcomm.show/",
-      registerUrl: "",
     },
   ];
 
   const past = [
+    {
+      type: "podcast" as const,
+      title: "Building Adaptable Content Systems with AI",
+      conference: "The Content Matters Podcast",
+      host: "Barb Mosher Zinck",
+      location: "Online",
+      date: "November 19, 2026",
+      about:
+        "The Content Matters Podcast is a monthly podcast sponsored by Ingeniux. It explores the practices behind effective content-rich experiences across technical publishing, web experiences, and customer experience.",
+      description:
+        "How can teams use AI to improve content workflows without losing consistency or human judgment? I join Barb Mosher Zinck to discuss practical AI use cases across content audits, design systems, and technical documentation.",
+      topics: [
+        "Content Strategy",
+        "Content Operations",
+        "Customer Experience",
+      ],
+      hasVideo: false,
+      hasSlides: false,
+      audioEmbedUrl:
+        "https://widget.spreaker.com/player?episode_id=76541317&theme=dark&chapters-image=true",
+      podcastUrl:
+        "https://info.ingeniux.com/content-matters-podcast",
+      graphic: contentMattersPodcastGraphic,
+      graphicFallback: FALLBACK_URLS.contentMattersPodcast,
+      graphicAlt:
+        "Content Matters podcast graphic for Building Adaptable Content Systems with AI",
+    },
     {
       type: "conference" as const,
       title: "Creating Content AI Agents That Actually Work",
@@ -359,18 +365,6 @@ export function Talks() {
                       Visit podcast
                     </a>
                   )}
-                  {pres.registerUrl && (
-                    <a
-                      href={pres.registerUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-1.5 rounded-md text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-                      style={{ backgroundColor: "var(--primary)" }}
-                    >
-                      Register now
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  )}
                 </div>
               </CardContent>
             </Card>
@@ -389,10 +383,9 @@ export function Talks() {
           }}
         >
           <p className="text-sm text-muted-foreground flex-1">
-            These recordings and slides belong to the respective
+            Select sessions include public audio. Other recordings and slides belong to the respective
             conferences, so I'm not able to share them publicly.
-            Click the buttons below to request access for
-            specific resources by email. You can click{" "}
+            Use the buttons below to request specific resources by email. You can select{" "}
             <strong>Request all talks</strong>, to request
             access to all resources. I'll review requests and
             grant access as soon as I can.
@@ -508,7 +501,21 @@ export function Talks() {
                     )}
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
-                  {presentation.hasVideo ? (
+                  {"audioEmbedUrl" in presentation && presentation.audioEmbedUrl ? (
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={() =>
+                        setAudioPlayer({
+                          title: presentation.title,
+                          embedUrl: presentation.audioEmbedUrl,
+                        })
+                      }
+                    >
+                      <Play aria-hidden="true" />
+                      Listen to episode
+                    </Button>
+                  ) : presentation.hasVideo ? (
                     <button
                       onClick={() =>
                         openModal(
@@ -530,6 +537,19 @@ export function Talks() {
                       <Play className="w-3.5 h-3.5" />
                       Recording unavailable
                     </span>
+                  )}
+                  {"podcastUrl" in presentation && presentation.podcastUrl && (
+                    <Button asChild variant="outline">
+                      <a
+                        href={presentation.podcastUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Mic aria-hidden="true" />
+                        Visit podcast
+                        <ExternalLink aria-hidden="true" />
+                      </a>
+                    </Button>
                   )}
                   {presentation.hasSlides && presentation.slideDeck && (
                     <button
@@ -652,6 +672,45 @@ export function Talks() {
                   </a>
                 </div>
               </>
+            )}
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+
+      <Dialog.Root
+        open={Boolean(audioPlayer)}
+        onOpenChange={(open) => {
+          if (!open) setAudioPlayer(null);
+        }}
+      >
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 z-40 bg-foreground/50" />
+          <Dialog.Content className="fixed left-1/2 top-1/2 z-50 w-[calc(100%-2rem)] max-w-2xl -translate-x-1/2 -translate-y-1/2 rounded-xl border border-border bg-card p-4 text-card-foreground shadow-xl focus:outline-none sm:p-6">
+            <div className="mb-4 flex items-start justify-between gap-4">
+              <div>
+                <Dialog.Title className="text-lg font-medium">
+                  {audioPlayer?.title}
+                </Dialog.Title>
+                <Dialog.Description className="mt-1 text-sm text-muted-foreground">
+                  Listen to this episode of The Content Matters Podcast.
+                </Dialog.Description>
+              </div>
+              <Dialog.Close className="rounded-md p-2 transition-colors hover:bg-muted" aria-label="Close audio player">
+                <X className="h-5 w-5" aria-hidden="true" />
+              </Dialog.Close>
+            </div>
+            {audioPlayer && (
+              <div className="overflow-hidden rounded-lg border border-border bg-muted">
+                <iframe
+                  src={audioPlayer.embedUrl}
+                  width="100%"
+                  height="200"
+                  title={audioPlayer.title}
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  className="block w-full"
+                />
+              </div>
             )}
           </Dialog.Content>
         </Dialog.Portal>

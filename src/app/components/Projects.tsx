@@ -124,7 +124,11 @@ const caseStudies = [
       "A feedback loop for logging revisions and improving prompts over time.",
     ],
     result:
-      "The program established a repeatable way to move from AI experimentation to governed content workflows. From 2025 through 2026, pilots were measured through task completion time, first-pass approval, revision categories, quality scorecards, and repeat use. Exact performance data is internal, so this public case study focuses on the evaluation method rather than unsupported percentages.",
+      "The program established a repeatable way to move from AI experimentation to governed content workflows. From 2025 through 2026, pilots were measured through task completion time, first-pass approval, revision categories, quality scorecards, and repeat use. One newsletter ideation session showed a participant-reported reduction of more than 80% in estimated task time.",
+    testimonial:
+      "I just whipped out four newsletter topics in under 12 minutes. I would say each one usually would take probably about 15 minutes or so to do. So it saved me a good 50 minutes.",
+    testimonialSource: "Senior Content Designer, PointClickCare",
+    metric: "80% Less Time Spent on Release",
     artifact: "prompt",
     githubUrl: "https://github.com/pindee/lavacon_2026",
   },
@@ -446,6 +450,21 @@ export function Projects() {
                 <div className="rounded-lg bg-accent p-5 text-accent-foreground">
                   <h4 className="mb-2 text-sm font-medium uppercase tracking-wider">Results and measurement</h4>
                   <p className="text-sm leading-6">{study.result}</p>
+                  {study.metric && (
+                    <div className="mt-5 rounded-md border border-border bg-card p-3 text-card-foreground" aria-label="Participant-reported pilot metric">
+                      <p className="text-xl font-semibold leading-tight">{study.metric}</p>
+                    </div>
+                  )}
+                  {study.testimonial && (
+                    <figure className="mt-5 border-l-4 border-ring pl-4">
+                      <blockquote className="text-sm leading-6">
+                        “{study.testimonial}”
+                      </blockquote>
+                      <figcaption className="mt-3 text-xs font-medium text-muted-foreground">
+                        — {study.testimonialSource}
+                      </figcaption>
+                    </figure>
+                  )}
                 </div>
               </div>
             </div>
